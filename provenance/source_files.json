@@ -1,0 +1,293 @@
+{
+  "source_root_description": "original Crazyflie research workspace",
+  "files": [
+    {
+      "source": "scripts/baseline.py",
+      "destination": "scripts/baseline.py",
+      "source_sha256": "23eb22762fe1f655f8d28cfa39c8c7fa55a71ce0e0efffe320c7b70f21890e00",
+      "source_bytes": 17217,
+      "packaged_sha256": "6c92fd586938b7e07ec3fddee4d431699770188c00ba0603523c0b57443bb75b",
+      "adapted": true
+    },
+    {
+      "source": "scripts/check_motion_sync.py",
+      "destination": "scripts/check_motion_sync.py",
+      "source_sha256": "037d629f0f187f81cccef4579ef0a1cd8236d41edf5de4097df6cf9ec29db501",
+      "source_bytes": 11673,
+      "packaged_sha256": "accab726234797ea29fa24506f6fd242cf970e359de6ea32512abda5e61970a5",
+      "adapted": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "source_sha256": "e853782e3465676bea6aa1fa23ee3e092bad4fa218eed09820b6bcb59016a53a",
+      "source_bytes": 19377,
+      "packaged_sha256": "fc682cbf084efa90ebcbf96399e8a714cbd5c68a5f5cc872fb0a860c278c7177",
+      "adapted": true
+    },
+    {
+      "source": "scripts/render_baseline.py",
+      "destination": "scripts/render_baseline.py",
+      "source_sha256": "45881bb93f306b9ad5bfffe3ab9e7569f9f15e603e7a8b99240565fb34347b8f",
+      "source_bytes": 16937,
+      "packaged_sha256": "55dba4d83b0ca2f2098343a71205419a267a1242e9e8f5693aef746e424f9873",
+      "adapted": true
+    },
+    {
+      "source": "scripts/prepare_fixed_feature_frames.py",
+      "destination": "scripts/prepare_fixed_feature_frames.py",
+      "source_sha256": "bfe1e95ad810feb84864c245e573e395f3e0dd68fa78939cb72ea2f2f12ec8c6",
+      "source_bytes": 12375,
+      "packaged_sha256": "4d0788b7aa1168bd1d62b24a5432ea60ece491431a1cc55101b366763ac24ef6",
+      "adapted": true
+    },
+    {
+      "source": "scripts/auto_features.py",
+      "destination": "scripts/auto_features.py",
+      "source_sha256": "f13515325fc47cf0f49616ea6c677b00a5184f122b9db86abbd5ccc9da8ac85c",
+      "source_bytes": 31869,
+      "packaged_sha256": "aea7366903889a3832f2b3aaa0c135ee5d43c466bec3fa0f992307bbc7afc596",
+      "adapted": true
+    },
+    {
+      "source": "scripts/auto_feature_viewer.py",
+      "destination": "scripts/auto_feature_viewer.py",
+      "source_sha256": "624a1ff412439fe405d85d9c3a48e10a8af94c3bf96fab50e292d86b0fcdba84",
+      "source_bytes": 11602,
+      "packaged_sha256": "4ced8b1e3de08e061e946dcc8df83ccc7397717262ffea25ee27772aae339f4a",
+      "adapted": true
+    },
+    {
+      "source": "scripts/fixed_feature_picker.py",
+      "destination": "scripts/fixed_feature_picker.py",
+      "source_sha256": "a165379bb97626a237193373965d915af2d11928e5783ad71169f3d293848cab",
+      "source_bytes": 28178,
+      "packaged_sha256": "ad821cf81f5301a841bc5076b124aa5b2288f92989766acf8ed95e628cd3407b",
+      "adapted": true
+    },
+    {
+      "source": "scripts/migrate_annotations_to_raw.py",
+      "destination": "scripts/migrate_annotations_to_raw.py",
+      "source_sha256": "ea3b66ebaecc0e51002ab566ecbcd2d55018d9fe2be78d94d8aa86f087e1ce7a",
+      "source_bytes": 2524,
+      "packaged_sha256": "4eba776f04aaed3779740685b597d4f10288f9656e73ff90525156f358db4f91",
+      "adapted": true
+    },
+    {
+      "source": "scripts/track_fixed_features.py",
+      "destination": "scripts/track_fixed_features.py",
+      "source_sha256": "c383931e04f87bb143b655b345be5cbc57aa0daa5685bd3d5492e062b46bcd4d",
+      "source_bytes": 13022,
+      "packaged_sha256": "734cb3502bdcaa88186bc1e66d3026c57e86e078f5eaa44bcd60854b40b07b58",
+      "adapted": true
+    },
+    {
+      "source": "scripts/brute_force_registration.py",
+      "destination": "scripts/brute_force_registration.py",
+      "source_sha256": "0a29f885e4ba97bc2660379290db933353d8115da8f23e830aed7a368173bb32",
+      "source_bytes": 23187,
+      "packaged_sha256": "495d387a21ad9210f4267649cd4e29c6f22212f90e2aeb1150e676e630d290bf",
+      "adapted": true
+    },
+    {
+      "source": "scripts/extend_fixed_feature_observations.py",
+      "destination": "scripts/extend_fixed_feature_observations.py",
+      "source_sha256": "f4adf4619b234065f1f742488b9bfeffa7e00c861d7a5a961e8b158ea6432f5c",
+      "source_bytes": 10469,
+      "packaged_sha256": "7d92c8f83fcf2f13ab28232fbd184b4341aac5a5c0b5aa309c913c0f8146e9ec",
+      "adapted": true
+    },
+    {
+      "source": "scripts/per_frame_registration.py",
+      "destination": "scripts/per_frame_registration.py",
+      "source_sha256": "3540a85b2049f712e5a4880933a011d1864ddd37530d612d92e563eed99335de",
+      "source_bytes": 19202,
+      "packaged_sha256": "a7b762ba5e66371360b3cedcc4cf7dc8771d6b3002f5a5fb43e73e8abac03135",
+      "adapted": true
+    },
+    {
+      "source": "scripts/render_distorted_views.py",
+      "destination": "scripts/render_distorted_views.py",
+      "source_sha256": "6dd4efc3a55dbcc223be2bfd1ec7b8ba74bb1eb8c91f236b92bfcf25549cc7b0",
+      "source_bytes": 2817,
+      "packaged_sha256": "987bfcbe4cf18b82c6b41e76f2949d1449ea5d320a2ab457c875f85aaa7073c6",
+      "adapted": true
+    },
+    {
+      "source": "scripts/build_per_frame_comparison_video.py",
+      "destination": "scripts/build_per_frame_comparison_video.py",
+      "source_sha256": "817a419db5940d62db7af8c3de6cf4230b7d31bb06ff97ca7a309b089fafc446",
+      "source_bytes": 5747,
+      "packaged_sha256": "1249bcaa010cb57d115f7f73130684812d596f89cb6423901498da584fe70d49",
+      "adapted": true
+    },
+    {
+      "source": "scripts/track_sep25_batch.py",
+      "destination": "scripts/track_features_batch.py",
+      "source_sha256": "24dc77e434488b6749d54641927d6e7d942d8252c669487be1e71f7c738f7587",
+      "source_bytes": 5981,
+      "packaged_sha256": "91e6fd523d5b1836fb339cb93f2041ebcc8c3b3c2a682d28e59389cbd71655e7",
+      "adapted": true
+    },
+    {
+      "source": "scripts/sep25_common.py",
+      "destination": "scripts/capture_paths.py",
+      "source_sha256": "de75a062b358c397046e0058f4b70cbc78a3127412922b5068127cdd345ec9c4",
+      "source_bytes": 2606,
+      "packaged_sha256": "54638f5293c26b2b91dd50b81856f428abb4351564d6110742c7148a4840e28c",
+      "adapted": true
+    },
+    {
+      "source": "scripts/prepare_sep25_runs.py",
+      "destination": "scripts/prepare_recordings.py",
+      "source_sha256": "89c9c868ae7c2ab435e42908e85869e0bb00b8f2014bee87256be833ebaf159e",
+      "source_bytes": 9087,
+      "packaged_sha256": "8916e84f8e2af08a9a75e1f27e7980d2594bcd840df2a9b55ce99f05cd3959c3",
+      "adapted": true
+    },
+    {
+      "source": "scripts/bootstrap_sep25.py",
+      "destination": "scripts/bootstrap_registration.py",
+      "source_sha256": "4ab68d5b286988207413ae86af5c74b67812dbc11b492fb86f238eed5ffe7cf0",
+      "source_bytes": 12611,
+      "packaged_sha256": "214f1f4505c5ab2c526b1ff2417900bc5f79a12bf2489e39eaca84591a61bed7",
+      "adapted": true
+    },
+    {
+      "source": "scripts/run_sep25_alignment.py",
+      "destination": "scripts/run_alignment.py",
+      "source_sha256": "65a5306339c86f2e592e402d2663d847b166c321891ad509dee6554eb41ec68b",
+      "source_bytes": 5925,
+      "packaged_sha256": "0d19b7e6708007a0532c46c202f084ac6e38f30a9c3f0080720396e42e4ef62a",
+      "adapted": true
+    },
+    {
+      "source": "scripts/sep25_pipeline_step.py",
+      "destination": "scripts/run_stage.py",
+      "source_sha256": "16bcac9fb8a339c77bb8d8a1e591ff97de8bdc9f9b943a33f47f45ec43b5b45d",
+      "source_bytes": 1049,
+      "packaged_sha256": "73a0da54b1444d39ba664713ed3495c0fdbc64600f793ed954a99dbaddae8c04",
+      "adapted": true
+    },
+    {
+      "source": "scripts/image_similarity.py",
+      "destination": "scripts/image_similarity.py",
+      "source_sha256": "57ce419906f27fa533e28660059020fb1881c203e96ca6c50a087e09e4c82920",
+      "source_bytes": 3617,
+      "packaged_sha256": "b6db1c5f057a150ca9dab3641c7cc4ace6f6ca39e15472ecc91bae22f9eb01d5",
+      "adapted": true
+    },
+    {
+      "source": "scripts/fit_crazyflie_appearance.py",
+      "destination": "scripts/grayscale_appearance.py",
+      "source_sha256": "6bc6e5d712d11fe913efcda14b924a77ffab9b4e80f5b5c955b82105a42b6fbe",
+      "source_bytes": 13509,
+      "packaged_sha256": "fee493cffb6cc5b801c69f3ba14d7ff10dfaab2f873e7a97daf535bcf031c8ad",
+      "adapted": true
+    },
+    {
+      "source": "scripts/fit_sep25_exposure.py",
+      "destination": "scripts/fit_exposure.py",
+      "source_sha256": "83137c5d42a3bea7b3e3b6f6fb5e9516fb58b171b024f04b05b2984e4186da13",
+      "source_bytes": 13376,
+      "packaged_sha256": "83277c472160482f627b7f0ed6d97c4e2745a8bb569972cbc782226053fa1b9e",
+      "adapted": true
+    },
+    {
+      "source": "scripts/audit_sep25_appearance.py",
+      "destination": "scripts/appearance_metrics.py",
+      "source_sha256": "3aea14d65f5cde2b55b506d75c3bb73b10378cd14595888e7bfe1799bca29777",
+      "source_bytes": 8292,
+      "packaged_sha256": "f79c69f1b49e78ba9c15ceaca3ed6c65c38a971ee2638e0d33396cd0f79ba838",
+      "adapted": true
+    },
+    {
+      "source": "scripts/refine_sep25_appearance.py",
+      "destination": "scripts/fit_appearance.py",
+      "source_sha256": "d82ce553cfe07934084265c3045b472b0738a1ee11d6cc5bcc226abb2dbb5883",
+      "source_bytes": 27717,
+      "packaged_sha256": "23d2f04b9319406677b2f2c5e4c74bdc445ddd80bbb5de0b647ef809b885246a",
+      "adapted": true
+    },
+    {
+      "source": "scripts/refine_sep25_camera_response.py",
+      "destination": "scripts/fit_camera_response.py",
+      "source_sha256": "f485c09f0a99ac3f05ee4f070f0c817805dd34a06843cca840b8263aac640208",
+      "source_bytes": 8349,
+      "packaged_sha256": "bf6bd015ecbd366253f27b4bf9e10c5d0c45593a2ff2facb6eb390bc66af33ee",
+      "adapted": true
+    },
+    {
+      "source": "scripts/verify_fixed_feature_registration.py",
+      "destination": "scripts/verify_fixed_feature_registration.py",
+      "source_sha256": "56b9907b909cf5a5f38092c23436d16751a473d111fb4ed94d5b7b0f9045bfa3",
+      "source_bytes": 12925,
+      "packaged_sha256": "6170031ae17781467052ac3e57ea48bd2573c5f190a0adad878aaba9a748da64",
+      "adapted": true
+    },
+    {
+      "source": "scripts/fixed_feature_picker.html",
+      "destination": "scripts/fixed_feature_picker.html",
+      "source_sha256": "abe50e0464ef4b2e8eafd854bbd0cf20b5e42c717529c3a83f2d0680704ba74c",
+      "source_bytes": 33777,
+      "packaged_sha256": "abe50e0464ef4b2e8eafd854bbd0cf20b5e42c717529c3a83f2d0680704ba74c",
+      "adapted": false
+    },
+    {
+      "source": "scripts/auto_feature_viewer.html",
+      "destination": "scripts/auto_feature_viewer.html",
+      "source_sha256": "f2667dcefa5cd47c13d2979f3c2d567e9ed6cd175d49b7c63c6faf31d142b46d",
+      "source_bytes": 24902,
+      "packaged_sha256": "f2667dcefa5cd47c13d2979f3c2d567e9ed6cd175d49b7c63c6faf31d142b46d",
+      "adapted": false
+    },
+    {
+      "source": "research/lens_model.json",
+      "destination": "configs/lens_model.json",
+      "source_sha256": "f59983f048558f7a59acb550cf6d2a351bbe113ef32e571342786cb791c099f4",
+      "source_bytes": 687,
+      "packaged_sha256": "db61ad4bcbdb4c6befbfa32a2127868e0495a737ba32507240167661339f08c5",
+      "adapted": true
+    },
+    {
+      "source": "research/registration_fixed_features.json",
+      "destination": "configs/seed_registration.json",
+      "source_sha256": "9465d567f7e10d1d8ecc83bb281a62314578939ac0f44a77d016af3f71b54d00",
+      "source_bytes": 5935,
+      "packaged_sha256": "2ca555ee898488b0c227cb4d5a560caa58cf82dfa03b6d0ae33d7573af896dc4",
+      "adapted": true
+    },
+    {
+      "source": "output/baseline/camera_config.json",
+      "destination": "configs/camera.json",
+      "source_sha256": "e79bbce82b4a2bfff9909478d72543bf5e93d82e9f389120686c4a01e213c6b5",
+      "source_bytes": 964,
+      "packaged_sha256": "e79bbce82b4a2bfff9909478d72543bf5e93d82e9f389120686c4a01e213c6b5",
+      "adapted": false
+    },
+    {
+      "source": "output/appearance_183828_v1/selected_model.json",
+      "destination": "configs/appearance_baseline.json",
+      "source_sha256": "17ad80469545a2853e7a3584fa39ac5bf52cbb515b7154a18de17ba54e085d80",
+      "source_bytes": 770,
+      "packaged_sha256": "17ad80469545a2853e7a3584fa39ac5bf52cbb515b7154a18de17ba54e085d80",
+      "adapted": false
+    },
+    {
+      "source": "output/sep25_gate/appearance_v3/selection.json",
+      "destination": "configs/appearance_selection.json",
+      "source_sha256": "b1a61c63452fc2927b5c11dbedae29db9905927dedcd2461bd8f799aa3af130b",
+      "source_bytes": 28797,
+      "packaged_sha256": "b1a61c63452fc2927b5c11dbedae29db9905927dedcd2461bd8f799aa3af130b",
+      "adapted": false
+    },
+    {
+      "source": "scripts/propose_fixed_features.py",
+      "destination": "scripts/gradient_features.py",
+      "source_sha256": "517059aeca55aa252e74faf0be87fa17f68492f879571a9f9160ceba51eba036",
+      "extraction": "Only gradient_magnitude; function body copied unchanged",
+      "packaged_sha256": "3d4c5444fa7530ddd90c3499b49fdf9c8c7f02cf339a92145c79cf523da1a15f",
+      "adapted": true
+    }
+  ]
+}

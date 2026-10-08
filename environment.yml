@@ -1,0 +1,11 @@
+name: crazyflie-alignment
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - ffmpeg
+  - git
+  - ninja
+  # Install the pip requirements using the three commands in README.md.
+  # gsplat's first run also needs a compatible CUDA toolkit/compiler.

@@ -1,0 +1,57 @@
+{
+  "width": 320,
+  "height": 240,
+  "K": [
+    [
+      181.153324,
+      0.0,
+      166.454976
+    ],
+    [
+      0.0,
+      182.146828,
+      75.996424
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "distortion_opencv_k1_k2_p1_p2_k3": [
+    -0.09113949,
+    0.01613085,
+    -9.149e-05,
+    0.00086883,
+    -0.01230918
+  ],
+  "baseline_distortion": "none: supplied K, unwarped raw target per Step 1",
+  "grayscale": "cv2.COLOR_RGB2GRAY on float32 RGB in [0,1]",
+  "camera_to_body_rotation_assumed": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0
+    ]
+  ],
+  "camera_origin_in_body_m": [
+    0.027,
+    0.0,
+    -0.007
+  ],
+  "assumed_body_axes": "forward x, left y, up z; camera right x, down y, forward z",
+  "quaternion_assumption": "active body-to-mocap, xyzw",
+  "conventions_verified": false,
+  "scene_to_mocap_registration": null,
+  "scene_checkpoint": null
+}

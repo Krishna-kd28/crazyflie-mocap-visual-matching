@@ -1,0 +1,96 @@
+[
+  {
+    "arguments": [
+      "prepare"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/prepare_recordings.py all\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "bootstrap"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/bootstrap_registration.py localize --atlas 64 --queries 24\npython $REPO/scripts/bootstrap_registration.py fit\npython $REPO/scripts/prepare_recordings.py sync --timing-camera-correction $REPO/workspace/output/captures/bootstrap/initial_hand_eye.json\npython $REPO/scripts/bootstrap_registration.py fit\npython $REPO/scripts/bootstrap_registration.py apply\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "bootstrap",
+      "--use-seed"
+    ],
+    "exit": 0,
+    "commands": "Copy seed registration into each run; retain prepared camera poses.\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "features"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/run_alignment.py features\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "align",
+      "--track",
+      "--accept-geometric"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/run_alignment.py fit --track --accept-geometric\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "review",
+      "--run",
+      "run_20260925T122400"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/run_stage.py run_20260925T122400 auto_feature_viewer --run run_20260925T122400 --port 8777\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "render"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/run_stage.py run_20260925T122400 per_frame_registration --run run_20260925T122400 --render-only\npython $REPO/scripts/run_stage.py run_20260925T123004 per_frame_registration --run run_20260925T123004 --render-only\npython $REPO/scripts/run_stage.py run_20260925T123534 per_frame_registration --run run_20260925T123534 --render-only\npython $REPO/scripts/run_stage.py run_20260925T125125 per_frame_registration --run run_20260925T125125 --render-only\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "verify"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/run_stage.py run_20260925T122400 verify_fixed_feature_registration --annotations $REPO/workspace/output/captures/run_20260925T122400/annotations.json --extra-annotations\npython $REPO/scripts/run_stage.py run_20260925T123004 verify_fixed_feature_registration --annotations $REPO/workspace/output/captures/run_20260925T123004/annotations.json --extra-annotations\npython $REPO/scripts/run_stage.py run_20260925T123534 verify_fixed_feature_registration --annotations $REPO/workspace/output/captures/run_20260925T123534/annotations.json --extra-annotations\npython $REPO/scripts/run_stage.py run_20260925T125125 verify_fixed_feature_registration --annotations $REPO/workspace/output/captures/run_20260925T125125/annotations.json --extra-annotations\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "video",
+      "--only-fitted"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/run_stage.py run_20260925T122400 build_per_frame_comparison_video --run run_20260925T122400 --panels real,per_frame,blend --plain-labels --out $REPO/workspace/output/captures/run_20260925T122400/alignment_matched_only.mp4 --only-fitted\npython $REPO/scripts/run_stage.py run_20260925T123004 build_per_frame_comparison_video --run run_20260925T123004 --panels real,per_frame,blend --plain-labels --out $REPO/workspace/output/captures/run_20260925T123004/alignment_matched_only.mp4 --only-fitted\npython $REPO/scripts/run_stage.py run_20260925T123534 build_per_frame_comparison_video --run run_20260925T123534 --panels real,per_frame,blend --plain-labels --out $REPO/workspace/output/captures/run_20260925T123534/alignment_matched_only.mp4 --only-fitted\npython $REPO/scripts/run_stage.py run_20260925T125125 build_per_frame_comparison_video --run run_20260925T125125 --panels real,per_frame,blend --plain-labels --out $REPO/workspace/output/captures/run_20260925T125125/alignment_matched_only.mp4 --only-fitted\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "appearance-fit"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/fit_exposure.py\npython $REPO/scripts/fit_appearance.py fit\npython $REPO/scripts/fit_appearance.py lighting\npython $REPO/scripts/fit_appearance.py run-gain\npython $REPO/scripts/fit_appearance.py evaluate\npython $REPO/scripts/fit_camera_response.py fit\npython $REPO/scripts/fit_camera_response.py evaluate\n",
+    "error": ""
+  },
+  {
+    "arguments": [
+      "appearance-export"
+    ],
+    "exit": 0,
+    "commands": "python $REPO/scripts/export_appearance.py\n",
+    "error": ""
+  }
+]

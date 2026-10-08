@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "max_absolute_errors": [
+    6.938893903907228e-17,
+    9.540979117872439e-18,
+    5.551115123125783e-17
+  ],
+  "reference": "saved checkpoint view matrices for all three example poses"
+}

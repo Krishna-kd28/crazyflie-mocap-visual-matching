@@ -1,0 +1,20 @@
+/home/krishna-dubey/miniconda3/envs/crazyflie3dgs/bin/python -m unittest discover -s /home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/tests -v
+test_export_preserves_pixels_and_frame_mapping (test_export.ExportIntegration.test_export_preserves_pixels_and_frame_mapping) ... ok
+test_empty_support_not_perfect_score (test_pipeline.AppearanceTests.test_empty_support_not_perfect_score) ... ok
+test_image_metric_identity_and_range (test_pipeline.AppearanceTests.test_image_metric_identity_and_range) ... ok
+test_saved_appearance_is_pixel_identical (test_pipeline.AppearanceTests.test_saved_appearance_is_pixel_identical) ... ok
+test_clock_recovery_with_arrival_outliers (test_pipeline.GeometryTests.test_clock_recovery_with_arrival_outliers) ... ok
+test_overscan_contains_every_sensor_ray (test_pipeline.GeometryTests.test_overscan_contains_every_sensor_ray) ... ok
+test_per_frame_tensor_loss_matches_numpy (test_pipeline.GeometryTests.test_per_frame_tensor_loss_matches_numpy) ... ok
+test_pose_interpolation_rejects_outages (test_pipeline.GeometryTests.test_pose_interpolation_rejects_outages) ... ok
+test_raw_lens_roundtrip_including_corners (test_pipeline.GeometryTests.test_raw_lens_roundtrip_including_corners) ... ok
+test_registration_and_checkpoint_conventions (test_pipeline.GeometryTests.test_registration_and_checkpoint_conventions) ... ok
+test_triangulation_recovers_known_scene_point (test_pipeline.GeometryTests.test_triangulation_recovers_known_scene_point) ... ok
+test_commands_resolve_outside_repo_working_directory (test_pipeline.PackagingTests.test_commands_resolve_outside_repo_working_directory) ... ok
+test_every_algorithm_parses_and_imports_from_package (test_pipeline.PackagingTests.test_every_algorithm_parses_and_imports_from_package) ... ok
+test_rejects_output_workspace_outside_package (test_pipeline.PackagingTests.test_rejects_output_workspace_outside_package) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.311s
+
+OK

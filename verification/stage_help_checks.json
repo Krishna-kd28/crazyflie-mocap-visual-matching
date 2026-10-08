@@ -1,0 +1,47 @@
+[
+  {
+    "module": "auto_features",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "track_fixed_features",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "brute_force_registration",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "extend_fixed_feature_observations",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "per_frame_registration",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "render_distorted_views",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "build_per_frame_comparison_video",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "auto_feature_viewer",
+    "exit": 0,
+    "error": ""
+  },
+  {
+    "module": "verify_fixed_feature_registration",
+    "exit": 0,
+    "error": ""
+  }
+]

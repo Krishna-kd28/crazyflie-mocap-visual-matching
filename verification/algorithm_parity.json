@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "function_count": 22,
+  "checks": [
+    {
+      "source": "scripts/baseline.py",
+      "destination": "scripts/baseline.py",
+      "function": "clock_diagnostic",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/baseline.py",
+      "destination": "scripts/baseline.py",
+      "function": "interpolate_pose",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/baseline.py",
+      "destination": "scripts/baseline.py",
+      "function": "raw_frame",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "function": "apply_registration",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "function": "checkpoint_views",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "function": "project",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "function": "triangulate",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "function": "raw_to_pinhole",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/fixed_features_common.py",
+      "destination": "scripts/fixed_features_common.py",
+      "function": "pinhole_to_raw",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/per_frame_registration.py",
+      "destination": "scripts/per_frame_registration.py",
+      "function": "grid_offsets",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/per_frame_registration.py",
+      "destination": "scripts/per_frame_registration.py",
+      "function": "frame_loss_numpy",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/brute_force_registration.py",
+      "destination": "scripts/brute_force_registration.py",
+      "function": "grid",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/brute_force_registration.py",
+      "destination": "scripts/brute_force_registration.py",
+      "function": "diverse_top",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/brute_force_registration.py",
+      "destination": "scripts/brute_force_registration.py",
+      "function": "search",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/image_similarity.py",
+      "destination": "scripts/image_similarity.py",
+      "function": "ssim_map",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/image_similarity.py",
+      "destination": "scripts/image_similarity.py",
+      "function": "edge_map",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/image_similarity.py",
+      "destination": "scripts/image_similarity.py",
+      "function": "compare",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/image_similarity.py",
+      "destination": "scripts/image_similarity.py",
+      "function": "aggregate",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/refine_sep25_appearance.py",
+      "destination": "scripts/fit_appearance.py",
+      "function": "direction_basis",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/refine_sep25_appearance.py",
+      "destination": "scripts/fit_appearance.py",
+      "function": "camera_response_features",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/refine_sep25_appearance.py",
+      "destination": "scripts/fit_appearance.py",
+      "function": "transform",
+      "ast_identical": true
+    },
+    {
+      "source": "scripts/refine_sep25_appearance.py",
+      "destination": "scripts/fit_appearance.py",
+      "function": "apply",
+      "ast_identical": true
+    }
+  ]
+}

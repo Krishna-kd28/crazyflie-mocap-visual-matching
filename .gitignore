@@ -1,0 +1,15 @@
+# Large, external, generated, and local-only inputs.
+workspace*/
+data/
+assets/
+weights/*
+!weights/README.md
+configs/local*.json
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,62 @@
+{
+  "run": "run_20260925T122400",
+  "index": 663,
+  "real": "../../examples/minimal_pair/run_20260925T122400/real.png",
+  "render": "feature_render_rgb.png",
+  "pairs": [
+    {
+      "id": "auto_011",
+      "real": [
+        61.84,
+        41.84
+      ],
+      "render": [
+        62.16,
+        44.03
+      ],
+      "point_G": [
+        -5.069577826786994,
+        -3.323495103308699,
+        -2.1560282586843385
+      ],
+      "difference": 2.2132555207205487
+    },
+    {
+      "id": "auto_012",
+      "real": [
+        160.91,
+        39.97
+      ],
+      "render": [
+        160.59,
+        44.34
+      ],
+      "point_G": [
+        -1.7314840189742902,
+        -3.2946114224778613,
+        -1.7551965652659591
+      ],
+      "difference": 4.381700583106978
+    },
+    {
+      "id": "auto_132",
+      "real": [
+        85.59,
+        111.53
+      ],
+      "render": [
+        89.34,
+        117.16
+      ],
+      "point_G": [
+        -3.134626139353786,
+        -1.6661469362415264,
+        0.14011027098389686
+      ],
+      "difference": 6.764569461540028
+    }
+  ],
+  "caption": "Stored real/render feature correspondences from the same frame; letters are explanatory labels. Automatic batch admission, not individually surveyed ground truth.",
+  "source_annotation_sha256": "f250713743e20a5253c23a46d3634c41a3677a504932fbd26395254bc5b63642",
+  "source_render_sha256": "66aa312210e00970e85be87e92b5aa252525c80f0479423ef7902025eec5d1cb"
+}

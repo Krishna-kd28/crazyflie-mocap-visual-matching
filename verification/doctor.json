@@ -1,0 +1,116 @@
+{
+  "config": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/configs/local.json",
+  "workspace": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/workspace",
+  "runs": [
+    "run_20260925T122400",
+    "run_20260925T123004",
+    "run_20260925T123534",
+    "run_20260925T125125"
+  ],
+  "files": {
+    "data_dir": {
+      "path": "/home/krishna-dubey/camera_research_stuff/data/25th sep data gate",
+      "exists": true
+    },
+    "scene_dir": {
+      "path": "/mnt/shared/pixelctbr_storage/offload/video/outputs/Gate_Long_hloc_seq/splatfacto/2026-06-11_015308_cleaned",
+      "exists": true
+    },
+    "checkpoint": {
+      "path": "/mnt/shared/pixelctbr_storage/offload/video/outputs/Gate_Long_hloc_seq/splatfacto/2026-06-11_015308_cleaned/nerfstudio_models/step-000129999.ckpt",
+      "exists": true
+    },
+    "camera": {
+      "path": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/configs/camera.json",
+      "exists": true
+    },
+    "lens": {
+      "path": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/configs/lens_model.json",
+      "exists": true
+    },
+    "seed_registration": {
+      "path": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/configs/seed_registration.json",
+      "exists": true
+    },
+    "reference_atlas": {
+      "path": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/configs/reference_atlas.npz",
+      "exists": true
+    },
+    "minima_weights": {
+      "path": "/home/krishna-dubey/camera_research_stuff/output/auto_features/minima_weights/minima_lightglue.pth",
+      "exists": true
+    },
+    "cotracker_weights": {
+      "path": "/home/krishna-dubey/.cache/torch/hub/checkpoints/scaled_offline.pth",
+      "exists": true
+    },
+    "appearance_model": {
+      "path": "/home/krishna-dubey/camera_research_stuff/crazyflie-mocap-visual-matching/configs/appearance_selection.json",
+      "exists": true
+    }
+  },
+  "missing_modules": [],
+  "ffmpeg": "/usr/bin/ffmpeg",
+  "python": "3.11.16",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "opencv-python-headless": "5.0.0.93",
+    "torch": "2.11.0+cu128",
+    "gsplat": "1.5.3",
+    "lightglue": "0.0",
+    "cotracker": "3.0"
+  },
+  "cuda_available": false,
+  "recordings": {
+    "run_20260925T122400": {
+      "camera": {
+        "rows": 1313,
+        "missing_columns": []
+      },
+      "mocap": {
+        "rows": 42997,
+        "missing_columns": []
+      },
+      "payload_exists": true,
+      "manifest_exists": true
+    },
+    "run_20260925T123004": {
+      "camera": {
+        "rows": 1197,
+        "missing_columns": []
+      },
+      "mocap": {
+        "rows": 39276,
+        "missing_columns": []
+      },
+      "payload_exists": true,
+      "manifest_exists": true
+    },
+    "run_20260925T123534": {
+      "camera": {
+        "rows": 2144,
+        "missing_columns": []
+      },
+      "mocap": {
+        "rows": 72781,
+        "missing_columns": []
+      },
+      "payload_exists": true,
+      "manifest_exists": true
+    },
+    "run_20260925T125125": {
+      "camera": {
+        "rows": 2737,
+        "missing_columns": []
+      },
+      "mocap": {
+        "rows": 96696,
+        "missing_columns": []
+      },
+      "payload_exists": true,
+      "manifest_exists": true
+    }
+  },
+  "ready_for_full_pipeline": false
+}

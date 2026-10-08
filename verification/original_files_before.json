@@ -1,0 +1,1698 @@
+[
+  {
+    "path": "scripts/analyse_gate_ellipse.py",
+    "sha256": "c2124499836d07738e0a9c5802ef18f4f73ba9fec42cd1f17b505007949ec467"
+  },
+  {
+    "path": "scripts/annotate_door_landmarks.py",
+    "sha256": "ac13063b1359bd02442e5bd0bc5ca2202692c4f346b2cc47f0d9f756696cce25"
+  },
+  {
+    "path": "scripts/annotate_panel_landmarks.py",
+    "sha256": "e21a9e274aaad4a953c17db846969b4715e68bad1cf51646618d6017619b3d9f"
+  },
+  {
+    "path": "scripts/assemble_starling_comparison.py",
+    "sha256": "5d428e82e571ac62c3a1244126b138e16bffafe8bb4a51d69ea1df891f44f39d"
+  },
+  {
+    "path": "scripts/audit_gate_refinement_data.py",
+    "sha256": "f5f947f3381997748016ac5058b7f25230bc8b144f6652278c0597cfb674941f"
+  },
+  {
+    "path": "scripts/audit_gate_sim_data.py",
+    "sha256": "3493f3ce1824ec1bfaa205640a9e497ee861c7ff7b1a1386973b06946837638f"
+  },
+  {
+    "path": "scripts/audit_mixed_gate_data.py",
+    "sha256": "135deb9e36cf7d10ebcc3054fba83d81fb038175823dabb916bd4e6d0c0984a9"
+  },
+  {
+    "path": "scripts/audit_mixed_gate_frames.py",
+    "sha256": "11542b1acfd060dcd5de7cd4b4ed8e7703e5adaa625b806540ebfe8cebb0da3a"
+  },
+  {
+    "path": "scripts/audit_sep25_appearance.py",
+    "sha256": "3aea14d65f5cde2b55b506d75c3bb73b10378cd14595888e7bfe1799bca29777"
+  },
+  {
+    "path": "scripts/audit_sep25_bright_sources.py",
+    "sha256": "8445ecc4e7f6b9277e100b54e7a0b427395a2b48f70c06731e294ceb7b24187a"
+  },
+  {
+    "path": "scripts/audit_timing_drift.py",
+    "sha256": "d31f1a96666723339f6f96aef97e1c6b66f2bf1bdbebee39076c4fdd38265656"
+  },
+  {
+    "path": "scripts/auto_feature_viewer.html",
+    "sha256": "f2667dcefa5cd47c13d2979f3c2d567e9ed6cd175d49b7c63c6faf31d142b46d"
+  },
+  {
+    "path": "scripts/auto_feature_viewer.py",
+    "sha256": "624a1ff412439fe405d85d9c3a48e10a8af94c3bf96fab50e292d86b0fcdba84"
+  },
+  {
+    "path": "scripts/auto_features.py",
+    "sha256": "f13515325fc47cf0f49616ea6c677b00a5184f122b9db86abbd5ccc9da8ac85c"
+  },
+  {
+    "path": "scripts/baseline.py",
+    "sha256": "23eb22762fe1f655f8d28cfa39c8c7fa55a71ce0e0efffe320c7b70f21890e00"
+  },
+  {
+    "path": "scripts/benchmark_matchers.py",
+    "sha256": "75d2a43653232ed4c1f38bf1ae12fa8e4b224f83744c9bd35990cbf510f60e45"
+  },
+  {
+    "path": "scripts/benchmark_trackers.py",
+    "sha256": "b2a619d56490971381a8757743b774cb684b88471d053db87a62a80f3a7bc6bd"
+  },
+  {
+    "path": "scripts/bluefix_scene.py",
+    "sha256": "0e4f30ac99517866c0c747e39f0ad9f6b076fead6d6082974d5d74c1cd057257"
+  },
+  {
+    "path": "scripts/bootstrap_sep25.py",
+    "sha256": "4ab68d5b286988207413ae86af5c74b67812dbc11b492fb86f238eed5ffe7cf0"
+  },
+  {
+    "path": "scripts/bright_door_common.py",
+    "sha256": "f237b38ac2000ece6780ab013477afa2ba8689434c34e7179fdecd689f335b6d"
+  },
+  {
+    "path": "scripts/brute_force_registration.py",
+    "sha256": "0a29f885e4ba97bc2660379290db933353d8115da8f23e830aed7a368173bb32"
+  },
+  {
+    "path": "scripts/build_all_gate_models_video.py",
+    "sha256": "26b099d0a0511abe82b36e126353efff1bc35de49f5257d7ec1ec61ce445d424"
+  },
+  {
+    "path": "scripts/build_appearance_products.py",
+    "sha256": "744b61dc442db9898022b5e17f2e4e98b5bf975528fd2ef4d1a3f30ee5eb1edf"
+  },
+  {
+    "path": "scripts/build_auto_feature_report.py",
+    "sha256": "15cfd729f1de21bc27c8da87b8406542e889ee5d9f373123cc7feabf0d200d75"
+  },
+  {
+    "path": "scripts/build_bluefix_readme.py",
+    "sha256": "3682f6a19d9305969f5a508c5effb9f1d608291fa16ba82ae142e5c9aabf0833"
+  },
+  {
+    "path": "scripts/build_bright_door_products.py",
+    "sha256": "0a3c11e1bd51eae48fd3e55e611ed47c35feb3b0cbf2eb3c6fdcfd3b36f942d3"
+  },
+  {
+    "path": "scripts/build_bright_door_report.py",
+    "sha256": "94cad4823bab6cda55711045b57dc85765e10102f069edbae57a3861a3fc355b"
+  },
+  {
+    "path": "scripts/build_doorway_investigation_report.py",
+    "sha256": "f493c9bf866ffa075fd56c23211464a6ec612b2f1495496aaed4298623fb7c08"
+  },
+  {
+    "path": "scripts/build_ellipse_report.py",
+    "sha256": "394f111d46843fa8808bd3ab0e8a004590280dadcd2c0efe5a16b51cb1f355df"
+  },
+  {
+    "path": "scripts/build_final_research_summary.py",
+    "sha256": "9edbf2c0a28a93f6168bc07ee0f58db2adf55d3ec08b3e5a69827e8e5140f390"
+  },
+  {
+    "path": "scripts/build_fixed_feature_frame_sheet.py",
+    "sha256": "1ea03648c6b64d80d371f1f430929495c5a0aa17b72da51290135b9c35d8b3d7"
+  },
+  {
+    "path": "scripts/build_fixed_feature_report.py",
+    "sha256": "24e97e01fc79f2ab10f46d5ed8cb436c9bcc07682aa212c15b30d9412035034d"
+  },
+  {
+    "path": "scripts/build_framewise_appearance_products.py",
+    "sha256": "7b9854ffa2380d367fb40c588f6eea9da8725fd89822a9c103a2fd7a1f621579"
+  },
+  {
+    "path": "scripts/build_framewise_appearance_report.py",
+    "sha256": "faa61fad53287efea914c0f9fdc94d294f38f0b66fcc1d1b044f9f726a1025bc"
+  },
+  {
+    "path": "scripts/build_gate_deployment_report.py",
+    "sha256": "3e806042698b65f76484c3a0ae7e19f5d6b24c9d5056b2ddb0e7055f4915e029"
+  },
+  {
+    "path": "scripts/build_gate_grayscale_sheet.py",
+    "sha256": "bed2250b402ad013113dcc7ed2dc9ed91aa8f7df2b398903a72dee13142c6af5"
+  },
+  {
+    "path": "scripts/build_gate_seg_demo.py",
+    "sha256": "53313870df262618c5bf2ec9f7f3a115b6f41e148dc66545ec317665499bf42e"
+  },
+  {
+    "path": "scripts/build_gate_study_products.py",
+    "sha256": "553e9d83b6f24a898aa0e569870627f7b9007a66b359488d4ef98b5aba690155"
+  },
+  {
+    "path": "scripts/build_lens_report.py",
+    "sha256": "cb854fe70010af942d4cbdee195da51d77ab202910e804d4220ffd9c655b89cc"
+  },
+  {
+    "path": "scripts/build_mixed_gate_frame_report.py",
+    "sha256": "00e324b4d5f3d47692b299e613db544699bc12d3f87d6a233aee2730a293cf88"
+  },
+  {
+    "path": "scripts/build_mixed_gate_products.py",
+    "sha256": "36ce40515bf4c6ae566c68fec10ee5cd013ecc39db33319f1d62789940b8c5d9"
+  },
+  {
+    "path": "scripts/build_mixed_gate_report.py",
+    "sha256": "812d6f3bf94c919c4c712c67a3fc5e846c5fd010e87dde77026fc6cd50b07836"
+  },
+  {
+    "path": "scripts/build_model13_deployment_report.py",
+    "sha256": "18d8db6b5673259afc7fe620053ac233b9d1641da7854c2daf271836422e954f"
+  },
+  {
+    "path": "scripts/build_multigate_products.py",
+    "sha256": "08d33187444d69aabaa5172850a22887a100d827fab23015f9f758d5bd5e2848"
+  },
+  {
+    "path": "scripts/build_patch_gate_products.py",
+    "sha256": "72dfce0aef4eb8523d124b3d8ebcac2a24de8df131328a259f7d182600f9edd7"
+  },
+  {
+    "path": "scripts/build_patch_study_reports.py",
+    "sha256": "415e64a09baff11e39e885e6b301b08a730556533f884078efb4206af87fa3d8"
+  },
+  {
+    "path": "scripts/build_per_frame_comparison_video.py",
+    "sha256": "817a419db5940d62db7af8c3de6cf4230b7d31bb06ff97ca7a309b089fafc446"
+  },
+  {
+    "path": "scripts/build_per_frame_report.py",
+    "sha256": "fe1905ae573d6f289661902c89d1c00c20c82b88a2221d92ea519fa6fb8141d7"
+  },
+  {
+    "path": "scripts/build_sep25_appearance_v2.py",
+    "sha256": "2ccb72a367613a57925cff18bf0236edc2809f7a49d680798ed1666e3d667c2a"
+  },
+  {
+    "path": "scripts/build_sep25_products.py",
+    "sha256": "83ec495bf53883c1ab15cf089676b7f9b109238095224f96863b100737f59656"
+  },
+  {
+    "path": "scripts/build_sep25_refinement_report.py",
+    "sha256": "d10aafc8d88433d8b02dac1da3fd5bf65d6bcdc426f7333b48f5a7b8fe4732f9"
+  },
+  {
+    "path": "scripts/build_sep25_reports.py",
+    "sha256": "dbc92bf520b1df682488b23f8c19f43e449942afed8a330518ca4d1bf471a7c3"
+  },
+  {
+    "path": "scripts/build_starling_broad_tables.py",
+    "sha256": "f8557d8d64b7377f608168c3b34f23910d45cf69bae7c5f4f514780a90055d32"
+  },
+  {
+    "path": "scripts/build_starling_example_grid.py",
+    "sha256": "6f5cacc67a8712fda54e1421e0a332eb96c2a444cccc7291bf2b7ff328ee91b6"
+  },
+  {
+    "path": "scripts/build_starling_four_panel_video.py",
+    "sha256": "d114dd4a46bc6ebcc1d246c65f18d7b2c8df1fd28cad333efdc376801a7273f4"
+  },
+  {
+    "path": "scripts/build_starling_gate_height_review.py",
+    "sha256": "4a22aa33d30961ba7bd34280ce28ed7dd6636a9602b773c39a1b3b2232f1cba8"
+  },
+  {
+    "path": "scripts/build_starling_room_landmarks.py",
+    "sha256": "9a1be2f725130a74badeefad1df080174034371e40de49dad94d1b15ca4685b6"
+  },
+  {
+    "path": "scripts/build_starling_search_appendix_assets.py",
+    "sha256": "a2c07b38fb07754492497804f986a277bbe6dc14ed7c154272937e4a5c6604b8"
+  },
+  {
+    "path": "scripts/build_starling_unmasked_two_assets.py",
+    "sha256": "69b780f923cde378f02f9f796b417862d0b3fe9f87a258c36cb1e0aba8fc41eb"
+  },
+  {
+    "path": "scripts/build_starling_unmasked_video.py",
+    "sha256": "784ee6914cdcbbb81f8b3eb0e736aaecdcc5d76adf81b00ce7a188276a7bf0f6"
+  },
+  {
+    "path": "scripts/build_sync_evidence.py",
+    "sha256": "a7cfd89ee343574320acd62c8d5d102b231b61bb6ce51b2697e769e9f11ee422"
+  },
+  {
+    "path": "scripts/build_visual_research_reports.py",
+    "sha256": "fafbc51d0332b390d24a63066e9dbebd959d9610cd31321e2e8961e026114dd3"
+  },
+  {
+    "path": "scripts/calibrate_lens.py",
+    "sha256": "b188b95ca70fa34ede678967cd2ab08c6745db69996515c83ce1d84a70559383"
+  },
+  {
+    "path": "scripts/check_landmark_registration.py",
+    "sha256": "ac73ec3a838c648913c5f01f50d037fa2b84118b6214219495dbb9f37bb59021"
+  },
+  {
+    "path": "scripts/check_matched_patch_masks.py",
+    "sha256": "9caf0fd18e2af257f4c4b04a76417c5483e2d20cfbba0aa46d27a4c0f3b6dc60"
+  },
+  {
+    "path": "scripts/check_mixed_gate_pdfs.py",
+    "sha256": "028bf089e3d9f9f034370a5e59929d8d9052c4219fd1f7ca8f5b9c6aabc1c69d"
+  },
+  {
+    "path": "scripts/check_motion_sync.py",
+    "sha256": "037d629f0f187f81cccef4579ef0a1cd8236d41edf5de4097df6cf9ec29db501"
+  },
+  {
+    "path": "scripts/check_patch_study_pdfs.py",
+    "sha256": "15c66e76921ef775b18ef6ae8775c5a1a1d52f0f5e9a91233c04763af25c6426"
+  },
+  {
+    "path": "scripts/check_registration_depth_sensitivity.py",
+    "sha256": "31b424b5539ef799100d1019c1a2ddf0f6a8832f66c6a364162d751803a01f06"
+  },
+  {
+    "path": "scripts/check_sep25_pdfs.py",
+    "sha256": "f4549e217f50f9046987466f977e628a5edf074f8314b99a71bf66ddcb140a3a"
+  },
+  {
+    "path": "scripts/check_sep25_refinement.py",
+    "sha256": "6711d1894a3ca9585f6872c75a081bb476949470a83cd204317e9df9ca46a2fd"
+  },
+  {
+    "path": "scripts/check_sep25_results.py",
+    "sha256": "47814fe0613fb5970b1902fd1c90e400e3a1cc36eee434143a6ed87920783579"
+  },
+  {
+    "path": "scripts/check_starling_sync.py",
+    "sha256": "2a379fb9850fe079f6281274824c675b216186dee68125157bebdd02e1193424"
+  },
+  {
+    "path": "scripts/combine_trajectory_videos.py",
+    "sha256": "d53c5886583a7b02851012ef5fb6618b98c60e9e0b574334a184ed4504bcbcac"
+  },
+  {
+    "path": "scripts/correct_door_chair_annotation.py",
+    "sha256": "c4c7182405aea5b575c8f34ca82fdf2e5cbcc924b707638336041aa4a084b340"
+  },
+  {
+    "path": "scripts/diagnose_starling_reference_alignment.py",
+    "sha256": "156e30bba7c30e38cdc317e5edc69ea8fb84c2160f16a223398597baf567dbf2"
+  },
+  {
+    "path": "scripts/document_all_gate_models_video.py",
+    "sha256": "ac4ecef7d7e52534bb4a65bf0c95678855d435b657d1bf42e7e552a8a90af7c2"
+  },
+  {
+    "path": "scripts/document_multigate_study.py",
+    "sha256": "96c098a53a424d86b974cbde5024d874a35392c30e27090e300b7145882ef631"
+  },
+  {
+    "path": "scripts/doorway_common.py",
+    "sha256": "301dfaaf91e06bd2f328a11edbb53e9972c4fd97cc7dfe39cae4fdcffdbed901"
+  },
+  {
+    "path": "scripts/download_sep25_drive.py",
+    "sha256": "715323159c7e7eb4957e42db86fdeba9d4c4e15285c1d41e7f2d3fe3aa076d91"
+  },
+  {
+    "path": "scripts/ellipse_features.py",
+    "sha256": "3ad2b68f91ed29362a6f92de8e62d84c04c6d9c9dc39d1c2d210a5ccf829e4f5"
+  },
+  {
+    "path": "scripts/ellipse_features_study.py",
+    "sha256": "cf4db1268ba8978eaa5a2f50e8ac2c043125935da765e764a5d9131cb82775cf"
+  },
+  {
+    "path": "scripts/evaluate_bright_door.py",
+    "sha256": "c7a8c154c29766ee9fe5176091f39fe7df5565b362eca2f677eff6a16c87e391"
+  },
+  {
+    "path": "scripts/evaluate_gate_seg_sim.py",
+    "sha256": "690ad45d1969c8e4498d3c7ae953763e7919908a3687f500214a3786f09823c1"
+  },
+  {
+    "path": "scripts/evaluate_mixed_gate.py",
+    "sha256": "92757773748e0ccf2c89dc0fa56e367c612c03d81f688da6df3c0d6d86021eaf"
+  },
+  {
+    "path": "scripts/evaluate_multigate_rollouts.py",
+    "sha256": "15e5c4ed35c02eca81ca0e0ba9e85f4ad84f48cbad312e1d474bf2f71ebb034e"
+  },
+  {
+    "path": "scripts/evaluate_patch_gate.py",
+    "sha256": "b00b79295657da80b05ff8bad932d6af249a84381d4fcb920d9cedcf0aa5e26d"
+  },
+  {
+    "path": "scripts/evaluate_registered_run.py",
+    "sha256": "3f1054c765bcc7a9dc5c98a08df7fc9825af13776719ed689c34433c9b6ed9c3"
+  },
+  {
+    "path": "scripts/evaluate_starling_step1.py",
+    "sha256": "e04702eb8f7808dbe9462fc264664a6b79887d863eec6b78ae46ebc026006256"
+  },
+  {
+    "path": "scripts/evaluate_starling_unmasked.py",
+    "sha256": "bd2712bd1f03d7d1dfa73acded6c91d898afaf2d0db51bede08b68ee17ab0f27"
+  },
+  {
+    "path": "scripts/export_sync_viewer.py",
+    "sha256": "ee2dbe69cedf896ef53dd36f5cb33aba175379f0dba85293e106e5ee4560cae6"
+  },
+  {
+    "path": "scripts/export_visual_study_manifest.py",
+    "sha256": "d5b8c311adfef75bf2d36fe51f0d0c384459532d82c35b8584744d7b9ee92e0c"
+  },
+  {
+    "path": "scripts/extend_fixed_feature_observations.py",
+    "sha256": "f4adf4619b234065f1f742488b9bfeffa7e00c861d7a5a961e8b158ea6432f5c"
+  },
+  {
+    "path": "scripts/extend_mixed_gate_thresholds.py",
+    "sha256": "0f9fbdf14a7ec094d3fd12a94adb256b57ce4fc1441f5252276e3f0be75e2996"
+  },
+  {
+    "path": "scripts/finalize_multigate_study.py",
+    "sha256": "0c503a0d18e40ba41fdcf1425dabc3dcec098fae1db0b45483c673138af988d2"
+  },
+  {
+    "path": "scripts/finalize_patch_study.py",
+    "sha256": "ca5ad0034703e5c24eea6be69ea4706ec80bdd4876a1b10c3811ca8fd9d8349d"
+  },
+  {
+    "path": "scripts/finalize_starling_broad.py",
+    "sha256": "89a93e2e3633b42b9d520ea73d82c68aee4c1b8f2a5ddd3501bcb4ad463659d3"
+  },
+  {
+    "path": "scripts/fit_bright_framewise.py",
+    "sha256": "a7222204467a1e551cb9fc874c9dc33b26a9925e962ba2e2b95eb4354dd5f24a"
+  },
+  {
+    "path": "scripts/fit_crazyflie_appearance.py",
+    "sha256": "6bc6e5d712d11fe913efcda14b924a77ffab9b4e80f5b5c955b82105a42b6fbe"
+  },
+  {
+    "path": "scripts/fit_framewise_appearance.py",
+    "sha256": "2ee32f27c7866c8e1a1af638c33c0fc91b35eda05cd52682e45122dc0999e824"
+  },
+  {
+    "path": "scripts/fit_landmark_registration.py",
+    "sha256": "8ace442d3abb17c929943992bcb2a323c33d1cbc4301e7842abec510ea8cd1a4"
+  },
+  {
+    "path": "scripts/fit_sep25_exposure.py",
+    "sha256": "83137c5d42a3bea7b3e3b6f6fb5e9516fb58b171b024f04b05b2984e4186da13"
+  },
+  {
+    "path": "scripts/fit_starling_adjustments.py",
+    "sha256": "35c684c5511a6d19366d31bfba89d280dc8e5ffd609f291401b209dafc4ece48"
+  },
+  {
+    "path": "scripts/fit_starling_gates.py",
+    "sha256": "a9d27083119578db2c6ec81c17b446cf327e8a9979b03cf1ed673dd7a722d75d"
+  },
+  {
+    "path": "scripts/fit_starling_unmasked_two.py",
+    "sha256": "f65150403be0c07fec9991ae6e0133bfd5a610663e6cb51d3051909eff2f93e9"
+  },
+  {
+    "path": "scripts/fixed_feature_picker.html",
+    "sha256": "abe50e0464ef4b2e8eafd854bbd0cf20b5e42c717529c3a83f2d0680704ba74c"
+  },
+  {
+    "path": "scripts/fixed_feature_picker.py",
+    "sha256": "a165379bb97626a237193373965d915af2d11928e5783ad71169f3d293848cab"
+  },
+  {
+    "path": "scripts/fixed_features_common.py",
+    "sha256": "e853782e3465676bea6aa1fa23ee3e092bad4fa218eed09820b6bcb59016a53a"
+  },
+  {
+    "path": "scripts/framewise_appearance_core.py",
+    "sha256": "8af38227c7b8256cc6a1b5f71f916c2f6223b82d63228c5cba899be8fce5ddd7"
+  },
+  {
+    "path": "scripts/gate_ellipse_predictor.py",
+    "sha256": "17742814e21b24f572b400602e20b567b4cc9a6ae217a94c01b47426b7753489"
+  },
+  {
+    "path": "scripts/gate_mixed_common.py",
+    "sha256": "dd44c55972d6ff43f48b84048b64b0a9c7e5e659392a17ab8a8d2ce47dfdcd93"
+  },
+  {
+    "path": "scripts/gate_patch_common.py",
+    "sha256": "67521a4385fbbe1a8f5f803933f4e8a62a91116708c16e69128bd94f651e1377"
+  },
+  {
+    "path": "scripts/gate_seg_metrics.py",
+    "sha256": "71a9bcfe85fc5ae67bade604758fb255ffaabd4014e491cbdd1730725b5ae469"
+  },
+  {
+    "path": "scripts/gate_seg_model.py",
+    "sha256": "8d12c1e9e071f8631da8ca5d884bf978c575c2fbbb341f8b70305b28a2e64838"
+  },
+  {
+    "path": "scripts/gate_sim_common.py",
+    "sha256": "82710de35fda115b4fa46f81e676c16d858bf70584aa37a3730fcb07fcfb2455"
+  },
+  {
+    "path": "scripts/gate_study_release.py",
+    "sha256": "240cd3bd340d119f58e89640a640e8799cf5123f8cf59a28df185b7be6d3cd6f"
+  },
+  {
+    "path": "scripts/generate_bright_door_data.py",
+    "sha256": "d17bf87b7cd69590c0bfd1c5dc11303f683dd06ea5535e8bf89bae47299ef923"
+  },
+  {
+    "path": "scripts/generate_doorway_data.py",
+    "sha256": "5ba9bfb2e5aa17811c31aa4c6cd33afdad35406949b72d0a4b0341ef0de9dfb3"
+  },
+  {
+    "path": "scripts/generate_ellipse_rollouts.py",
+    "sha256": "01f4f7ae3051e807abae33ea36fc6038766a6b1ec6de914939d32ac5848334a1"
+  },
+  {
+    "path": "scripts/generate_gate_sim_audits.py",
+    "sha256": "e9a6fe561e336e610b784a1b89f2078a053cd33d9826a39caebd75abbd239caa"
+  },
+  {
+    "path": "scripts/generate_gate_sim_dataset.py",
+    "sha256": "734b4ec22a974eb8b6aa0b767dc0bcf7e8d325dee811aabfdfad4ac904316416"
+  },
+  {
+    "path": "scripts/generate_mixed_gate_data.py",
+    "sha256": "5d80a5310e05f2b3932e810cf7fd21658572d701bd44328cd4f286b8a329c835"
+  },
+  {
+    "path": "scripts/generate_patch_gate_data.py",
+    "sha256": "a094480fb8d3922c5ee7e1809a856ddda162a1ab1cfe3a001c16f9519b32215b"
+  },
+  {
+    "path": "scripts/image_similarity.py",
+    "sha256": "57ce419906f27fa533e28660059020fb1881c203e96ca6c50a087e09e4c82920"
+  },
+  {
+    "path": "scripts/import_previous_landmarks.py",
+    "sha256": "617c86f421731129e66c463031ac0a3c0030422a59760fa417bf31d5cffb082d"
+  },
+  {
+    "path": "scripts/inspect_sep25_alignment.py",
+    "sha256": "d5c15216512706dfe71f9bc70beaa73ca905b7507becce1ce0a1e48e27457346"
+  },
+  {
+    "path": "scripts/inspect_sep25_features.py",
+    "sha256": "94b11bfe6ce85409a0f815ec37540b49521d6e06fc4d6057948911c63e803d3a"
+  },
+  {
+    "path": "scripts/make_preview.py",
+    "sha256": "e6c3160eb5fa01fc9c7aa5b844e99e8cca6b432d269723edb785ab3906c6861e"
+  },
+  {
+    "path": "scripts/mask_starling_video.py",
+    "sha256": "7c03afd2843134131c3dc13e97646cfeaebebfc951b9437ab0e547059079b7e7"
+  },
+  {
+    "path": "scripts/migrate_annotations_to_raw.py",
+    "sha256": "ea3b66ebaecc0e51002ab566ecbcd2d55018d9fe2be78d94d8aa86f087e1ce7a"
+  },
+  {
+    "path": "scripts/multigate_common.py",
+    "sha256": "a83e489b856896ad2b8374ca21501268b35a59320282135c68d44611dae16257"
+  },
+  {
+    "path": "scripts/organize_research_results.py",
+    "sha256": "bd6b7298631770745b796ee933c472bb43bda5e5b9a01887a5527ac2181e0ef3"
+  },
+  {
+    "path": "scripts/package_bright_door.py",
+    "sha256": "527579a3e575abe360570d8ff040988a8c033c5f8ffc7a857807bc519228334b"
+  },
+  {
+    "path": "scripts/package_mixed_gate.py",
+    "sha256": "4f8e21d7f2341d1e2fdf4e57abb81788af5f393ed359b1af4fca002cb2072af3"
+  },
+  {
+    "path": "scripts/package_sep25_results.py",
+    "sha256": "20705907fe160fbcc71dc2508936695146dca0d0109cecec017a1e5ca00fea61"
+  },
+  {
+    "path": "scripts/per_frame_registration.py",
+    "sha256": "3540a85b2049f712e5a4880933a011d1864ddd37530d612d92e563eed99335de"
+  },
+  {
+    "path": "scripts/plot_fixed_feature_residuals.py",
+    "sha256": "593354b6252478860d80e3b68b5a2ebcd42a1ef58cd5e567d3573de0948d4c72"
+  },
+  {
+    "path": "scripts/plot_gate_sim_sampling.py",
+    "sha256": "eeeb3017c04cb43116eeab362774edcf49c7efd7d7ab9591ba6d4bed6925d29c"
+  },
+  {
+    "path": "scripts/plot_starling_adjustments.py",
+    "sha256": "6b6704b15ee404984363178993004268e27552a3bd16fffe12097500c4a63251"
+  },
+  {
+    "path": "scripts/plot_starling_broad.py",
+    "sha256": "f25e790bb423baeefa318d12ce369cc7538a463811d3277498eaa8f3a09e55ed"
+  },
+  {
+    "path": "scripts/plot_starling_step1.py",
+    "sha256": "ad7fa83d25df94d5bdad1597fe93cf5b4799bfdb503f90423e6ef5159a2f60ce"
+  },
+  {
+    "path": "scripts/plot_sync.py",
+    "sha256": "bd73289baf091ef8b666830eb926986fffe5297b479da63a77bbef85d9536106"
+  },
+  {
+    "path": "scripts/predict_bright_door_option.py",
+    "sha256": "054e3af97cef9fdc16f8262aa8facb7a9cc404037238cb4d0569f27b5770c89d"
+  },
+  {
+    "path": "scripts/predict_bright_door_real.py",
+    "sha256": "ec7a6365b447b23c7e1aa93f2dfa6fbbb058623a0f4090f549b87f315a203332"
+  },
+  {
+    "path": "scripts/predict_gate_mask.py",
+    "sha256": "611bbbb9473026cf031cbaa5d539a477ca21bc95ec2e44fcb37dd51adedc8bc7"
+  },
+  {
+    "path": "scripts/predict_mixed_gate_real.py",
+    "sha256": "fb058cc60c1bc7ff3d5a8035aea4f1e87189360a79d64bb6f6854fa7c60ddeab"
+  },
+  {
+    "path": "scripts/prepare_bright_doorway_summary.py",
+    "sha256": "2f3d991ee081aa2443faff103e81a6f13bf791815ec8e4a6e276f9acb952bd03"
+  },
+  {
+    "path": "scripts/prepare_doorway_experiment.py",
+    "sha256": "9cc312e3a6ad3e3b9d60df4a7d5971c63099f18391ff6fa2d511b35e38b78cf8"
+  },
+  {
+    "path": "scripts/prepare_ellipse_report.py",
+    "sha256": "8327776ddba64f0c15cae62e88b1bd5d6b62bf1d60863633804d79705a1140e6"
+  },
+  {
+    "path": "scripts/prepare_final_research_summary.py",
+    "sha256": "71b1f79b50118f5798da943a80b4e179af4e97e56c0a1e139bcdd9eb733f509b"
+  },
+  {
+    "path": "scripts/prepare_fixed_feature_frames.py",
+    "sha256": "bfe1e95ad810feb84864c245e573e395f3e0dd68fa78939cb72ea2f2f12ec8c6"
+  },
+  {
+    "path": "scripts/prepare_sep25_runs.py",
+    "sha256": "89c9c868ae7c2ab435e42908e85869e0bb00b8f2014bee87256be833ebaf159e"
+  },
+  {
+    "path": "scripts/prepare_starling_broad.py",
+    "sha256": "1ffd9c81ac8752835bea3dd7d27c65aec140d5a314107d8a8870f568e306320c"
+  },
+  {
+    "path": "scripts/prepare_starling_floor_input.py",
+    "sha256": "db5d8c084000cabcb33244774867584db34a1c6a1ecd178809d342580b6cb06f"
+  },
+  {
+    "path": "scripts/present_unmasked_search.py",
+    "sha256": "c9e43c8e08b3fc655802e21c44ae403e778e33007386e74627757f1fdd7f7622"
+  },
+  {
+    "path": "scripts/preview_bright_door_scene.py",
+    "sha256": "314dfb8b2c554e8590f7e219b881e297ef8e00a4a705a7e8658f10cf6d98a768"
+  },
+  {
+    "path": "scripts/preview_gate_geometry.py",
+    "sha256": "e916e8806c387200f99159b4ee4e92476ae25db9f25c1b3753590a928f6e6604"
+  },
+  {
+    "path": "scripts/preview_sep25_alignment.py",
+    "sha256": "e96f4ea51752e29fddda0e1cccf40be8eed8a48f5fe524a7219693a8528784e7"
+  },
+  {
+    "path": "scripts/preview_starling_3d_exclusions.py",
+    "sha256": "a79d0b75024e47121cc4023f7b588ffb619199698e9627e242a1c67c6c27c14a"
+  },
+  {
+    "path": "scripts/probe_registration_hypotheses.py",
+    "sha256": "b02bf6f8fc38e95cccb7aa5770d655bd4685e39c3db1d3bb85e0f76d2e139699"
+  },
+  {
+    "path": "scripts/probe_registration_matches.py",
+    "sha256": "1106914812fb778cec6844776617e2eea0adcfb95a1ea49f0017ca4ab927c8c1"
+  },
+  {
+    "path": "scripts/probe_starling_tone_complexity.py",
+    "sha256": "7fa34100ed76a178990c09ed3ff796b111fac5ed0080b3d38552047367c4f195"
+  },
+  {
+    "path": "scripts/promote_bright_doorway.py",
+    "sha256": "d463028504a0aaa9061e60a2e9a36374d5dbb88bde0222e7a91c835d0aa1f4ab"
+  },
+  {
+    "path": "scripts/promote_gate_model13.py",
+    "sha256": "8f65b120b392d76d20de0a95b31d878a6fbea69ed8eb61eab4cfdec51a47b339"
+  },
+  {
+    "path": "scripts/propose_fixed_features.py",
+    "sha256": "517059aeca55aa252e74faf0be87fa17f68492f879571a9f9160ceba51eba036"
+  },
+  {
+    "path": "scripts/refine_gate_sim_data.py",
+    "sha256": "3b2a12cb7f33eec3dd80f40db4d3b7e700b94a77ca28a9396c564dd8690ffc19"
+  },
+  {
+    "path": "scripts/refine_gate_sim_negatives.py",
+    "sha256": "c0e0917d25f10fc8f460b62e8fb379bb78636cdc06ea0292606f5a977605e097"
+  },
+  {
+    "path": "scripts/refine_sep25_appearance.py",
+    "sha256": "d82ce553cfe07934084265c3045b472b0738a1ee11d6cc5bcc226abb2dbb5883"
+  },
+  {
+    "path": "scripts/refine_sep25_camera_response.py",
+    "sha256": "f485c09f0a99ac3f05ee4f070f0c817805dd34a06843cca840b8263aac640208"
+  },
+  {
+    "path": "scripts/register_starling_room.py",
+    "sha256": "388a81edb1118319d833e5d46fa6b81d76efed0bf6bc454be799506bfe843a84"
+  },
+  {
+    "path": "scripts/render_baseline.py",
+    "sha256": "45881bb93f306b9ad5bfffe3ab9e7569f9f15e603e7a8b99240565fb34347b8f"
+  },
+  {
+    "path": "scripts/render_bluefix_comparison.py",
+    "sha256": "444b06259b6c2936e1a9a30c24ea6f000014aa575fa33b383dddaa791ae85f3e"
+  },
+  {
+    "path": "scripts/render_distorted_views.py",
+    "sha256": "6dd4efc3a55dbcc223be2bfd1ec7b8ba74bb1eb8c91f236b92bfcf25549cc7b0"
+  },
+  {
+    "path": "scripts/render_landmark_depth.py",
+    "sha256": "37296605c5146f60968e74bb3ea5a4f70cd3e9cf3173b379fed7f41a87779e3a"
+  },
+  {
+    "path": "scripts/render_multigate_rollouts.py",
+    "sha256": "acfa6c4efac4711dcd2549482a1d7dba3b79e3e65980e13aab42026c8ae418b7"
+  },
+  {
+    "path": "scripts/render_registration_yaw.py",
+    "sha256": "116e88de52032bb03cd11c814377406afb2731d4a25c7cadec77e7cd41bdca71"
+  },
+  {
+    "path": "scripts/render_spatial_hypotheses.py",
+    "sha256": "594a71fbc288057aa0490c6943c5e3bebfe21e659829c6efbe3c0b18cff9ea13"
+  },
+  {
+    "path": "scripts/render_trajectory_video.py",
+    "sha256": "d5dd53fcba30ed45b63feda921bf28a8d995b52d427717582eea080348af13e7"
+  },
+  {
+    "path": "scripts/render_video_gsplat.py",
+    "sha256": "3d343497999a5fb6b0f31fdd325550b36aff3d36adcf476449550e5931e17832"
+  },
+  {
+    "path": "scripts/run_fixed_feature_pipeline.py",
+    "sha256": "a2f8f094c5ebec4d5d002bc19d212c5cbf2845fa90e1502e94c10b68275e6eee"
+  },
+  {
+    "path": "scripts/run_full_chain.sh",
+    "sha256": "88f3e4c97884d7085eece694681f38b790314e90533fb4d40596fb921fe76a39"
+  },
+  {
+    "path": "scripts/run_gate_final_audit.py",
+    "sha256": "2a03a6670abc4b78a17cc2a95e2fccf445b33707d0fb1dd457b213c6ed0977f9"
+  },
+  {
+    "path": "scripts/run_gate_seg_refinement.sh",
+    "sha256": "5a734b99c865731796b118c51fbaff72da6adb06114b896547e99ffe4be9cba6"
+  },
+  {
+    "path": "scripts/run_gate_seg_study.sh",
+    "sha256": "bc0b60ad0dfcd3085b0236cdd13ac6f41aab69ec76806861788b6b60e37b8800"
+  },
+  {
+    "path": "scripts/run_mixed_gate_training.py",
+    "sha256": "d3739efb01e3f044c84059b2a79f69b180b5353d0e65a7fafd486b4c4f987cba"
+  },
+  {
+    "path": "scripts/run_patch_gate_study.py",
+    "sha256": "6cf3a99c05a75cfb05527355f7d2a0852f5bc355227e6b4b0f7b901f27e5cfd7"
+  },
+  {
+    "path": "scripts/run_sep25_alignment.py",
+    "sha256": "65a5306339c86f2e592e402d2663d847b166c321891ad509dee6554eb41ec68b"
+  },
+  {
+    "path": "scripts/search_starling_boundary_mix.py",
+    "sha256": "72f03b6009cc356655bf52df2b542a644eed86d47ffe76989935713c8db85177"
+  },
+  {
+    "path": "scripts/search_starling_flexible.py",
+    "sha256": "23343a17ff1fe1817ce62e91d7cb2b603bdbcc147b0eb52319f3083d7ef1d6c4"
+  },
+  {
+    "path": "scripts/search_starling_flexible_refined.py",
+    "sha256": "30b189892fbaddff31024da1f1c7d692d177aed4f0ff59769c02a4ba0cc1bd50"
+  },
+  {
+    "path": "scripts/search_starling_kernels.py",
+    "sha256": "b480437c5be51358be5fb589d21c2837eb9fe23398acdce4e0974374491f871b"
+  },
+  {
+    "path": "scripts/search_starling_orders.py",
+    "sha256": "2dcc23725d37de6b8fb005dbb43b542c708e9cde94ebf65a9a0325bac458315a"
+  },
+  {
+    "path": "scripts/search_starling_spatial.py",
+    "sha256": "4e56fc9bea28a7eba08ae15d365be54c64c30419670f9c465b471aaa8137433b"
+  },
+  {
+    "path": "scripts/search_starling_spectral.py",
+    "sha256": "2191af723a32617580f043d0b1ee223b0c44d9e4e8b6d2a15a8242cbd6873493"
+  },
+  {
+    "path": "scripts/search_unmasked_combinations.py",
+    "sha256": "e5009c2a13afead5b6f735200af376e5da672c09e46b78f3566f095444f084de"
+  },
+  {
+    "path": "scripts/search_unmasked_filters.py",
+    "sha256": "1b0df6bb65932e76dda6fa24f7ca523e7e44d3d06bc4467946df4375f429c428"
+  },
+  {
+    "path": "scripts/search_unmasked_flexible.py",
+    "sha256": "e71906d193a3ecbbf5f2fbf9321fc979c30e905a2f5b1c32226dc4f41dd5c556"
+  },
+  {
+    "path": "scripts/search_unmasked_geometry.py",
+    "sha256": "6f8afa84407d1ad709e98b5510339c68dfbdf308339fa520fbbe9223f9948c30"
+  },
+  {
+    "path": "scripts/search_unmasked_orders.py",
+    "sha256": "1420414351343f184ba15176e5ccbde1060451c29cf39a4002f7e251fdee261c"
+  },
+  {
+    "path": "scripts/search_unmasked_spectral.py",
+    "sha256": "25f158d1d75bde9edd3850d9b1d869f49129756b4f911282d06427823f29ad41"
+  },
+  {
+    "path": "scripts/search_unmasked_ssim.py",
+    "sha256": "6bfe34b11fc5ea6eee90796d6697ceae93363c3533b48a5624cb55b6cf8e7316"
+  },
+  {
+    "path": "scripts/segment_sep25_real.py",
+    "sha256": "bfdb0b5d2c6fefefde793419df148de7bceff156178a30d437bf2930e34a0623"
+  },
+  {
+    "path": "scripts/select_gate_seg_model.py",
+    "sha256": "b9b1544d01310785daaa772ff0f6f75f69cdb9db2d4046ff7edc4ff7174fc8d4"
+  },
+  {
+    "path": "scripts/select_starling_broad.py",
+    "sha256": "c740d5be288470c97da40356fbccc4f0906d13a3473b63f8070e1031155fa2b6"
+  },
+  {
+    "path": "scripts/sep25_common.py",
+    "sha256": "de75a062b358c397046e0058f4b70cbc78a3127412922b5068127cdd345ec9c4"
+  },
+  {
+    "path": "scripts/sep25_pipeline_step.py",
+    "sha256": "16bcac9fb8a339c77bb8d8a1e591ff97de8bdc9f9b943a33f47f45ec43b5b45d"
+  },
+  {
+    "path": "scripts/starling_broad_common.py",
+    "sha256": "9bc5ece08e83cabe9dde884c69b85a81014c5aa79583a759c0a8fb47cab02d65"
+  },
+  {
+    "path": "scripts/starling_broad_models.py",
+    "sha256": "514a453c14e810d3641c4b69c664797bda972f600bb6939465952c14cfb685a0"
+  },
+  {
+    "path": "scripts/starling_curtain_mask.py",
+    "sha256": "fd8f5b81a4af9cbe43389bc917e0596389c449dabf868e94efedbb653ff4622e"
+  },
+  {
+    "path": "scripts/starling_run4.py",
+    "sha256": "cd94aa04ba4f19293cf56413a22897eb8ae93d49fd780901805b29078bc59643"
+  },
+  {
+    "path": "scripts/strengthen_bright_door_data.py",
+    "sha256": "e0a2f1aed680ab03980f64daf72fe265bb34df5966b049cf32e0a0980b4c30a6"
+  },
+  {
+    "path": "scripts/test_baseline.py",
+    "sha256": "a96e5f4bb9a2479ed1e89f27b5c2f7a28a6c126477d46417f66f64f547a05c62"
+  },
+  {
+    "path": "scripts/test_gate_seg_geometry.py",
+    "sha256": "620ce3d68e39143a3026c4806cc5df0328fc9da3f485f29a1e660998384201fe"
+  },
+  {
+    "path": "scripts/test_image_similarity.py",
+    "sha256": "6dd404ee846ace5c54200b0cae94cee84dd1bc74d3ff713751ebe76434bcdc51"
+  },
+  {
+    "path": "scripts/test_motion_sync.py",
+    "sha256": "0bd71df9d4610626125e164b522fe43a102a8562bfb2d6ebf47afc612996b4ad"
+  },
+  {
+    "path": "scripts/track_fixed_features.py",
+    "sha256": "c383931e04f87bb143b655b345be5cbc57aa0daa5685bd3d5492e062b46bcd4d"
+  },
+  {
+    "path": "scripts/track_sep25_batch.py",
+    "sha256": "24dc77e434488b6749d54641927d6e7d942d8252c669487be1e71f7c738f7587"
+  },
+  {
+    "path": "scripts/train_bright_door.py",
+    "sha256": "aa4641c0999b5445bf541a2d1dc027aae67e28c1423f3c8402eca6e6ae5a84dc"
+  },
+  {
+    "path": "scripts/train_gate_seg_sim.py",
+    "sha256": "80af66d1900ed770009684423ee060546d10f6b8b79af011683288a952d71953"
+  },
+  {
+    "path": "scripts/train_mixed_gate.py",
+    "sha256": "506b830c38577b00f08dd343bb244ef5f497fcee5a864d6c4d393f110eea1316"
+  },
+  {
+    "path": "scripts/train_patch_gate.py",
+    "sha256": "dd74689b5a661f436b6d838faf7ef4a0279c97e3aae3bea9ad7e6df67dab13b0"
+  },
+  {
+    "path": "scripts/unmasked_search_common.py",
+    "sha256": "f5f3debc37270d64824c099eeefde90b6aee4af232b11c00918e3f56218f2242"
+  },
+  {
+    "path": "scripts/unmasked_search_models.py",
+    "sha256": "952ca55cafbf42b37f77c98adaa0a406e0002bbb39be0b8b43dbf161a68ea4a0"
+  },
+  {
+    "path": "scripts/validate_auto_features.py",
+    "sha256": "c4e1300a57bce52d0e3de40d8a7da1dee256ac0e9a2fe0a51ec89e748ec10cd7"
+  },
+  {
+    "path": "scripts/verify_bright_door_data.py",
+    "sha256": "bb56f887be8df22068f7ef0d9fb6489655df73d3e0449a7a467891c363996b2a"
+  },
+  {
+    "path": "scripts/verify_bright_door_results.py",
+    "sha256": "b60bac753cfdfbb717aaf44810dbe53f022d082a06c5e5dc0fd688e459d72fdc"
+  },
+  {
+    "path": "scripts/verify_ellipse_study.py",
+    "sha256": "37a9160f00bfa699e3eb334c29b55f70815fdce1d999e97b7ae67de42c2f9469"
+  },
+  {
+    "path": "scripts/verify_fixed_feature_registration.py",
+    "sha256": "56b9907b909cf5a5f38092c23436d16751a473d111fb4ed94d5b7b0f9045bfa3"
+  },
+  {
+    "path": "scripts/verify_gate_deployment.py",
+    "sha256": "5d5164a5997792b722e8c5997c0601320389859ce4a7b25c047192b4f743c541"
+  },
+  {
+    "path": "scripts/verify_mixed_gate.py",
+    "sha256": "19a9d33895dfe36d28f40077238db4ad4efe9e038e8df5193a540caeb6b86816"
+  },
+  {
+    "path": "scripts/verify_multigate_study.py",
+    "sha256": "c05975b3100db14b573240db8132eb2b04c637c5bcae8b7d5c6322a1d2698f83"
+  },
+  {
+    "path": "scripts/verify_patch_gate_study.py",
+    "sha256": "2fa1a90b554321efa8231b3bb920704b404f95465a21d49c18b7719d2c246da7"
+  },
+  {
+    "path": "scripts/verify_starling_adjustments.py",
+    "sha256": "3aba9b5f06617493b3e0f86e4295bbd5523f3c2e72bd576dbe6c8b2b29d58a8d"
+  },
+  {
+    "path": "scripts/verify_starling_broad.py",
+    "sha256": "2a65c019613e86583412bdced7e8e2224c8d78a0c60adddbf20f9b62b0a27af5"
+  },
+  {
+    "path": "scripts/verify_starling_masks.py",
+    "sha256": "2ab005a513632c3aa6323fd55ee5678c7c502dea88a9b999a908a0eb0f246fbe"
+  },
+  {
+    "path": "scripts/verify_starling_step1.py",
+    "sha256": "9227e69aa3e7ae8c2130d648b783a9052795ae841211628c979fb4f424c553a8"
+  },
+  {
+    "path": "scripts/verify_starling_unmasked_two.py",
+    "sha256": "701808dfe7fb5f5e0935f8faee92404d1ae8464b91165f5843ee27f3519ba60b"
+  },
+  {
+    "path": "scripts/verify_sync_viewer.cjs",
+    "sha256": "2bd7c4fd6b9d523fb87e9d5effd8d07ca9b4e09e336b6f74d5643e54d838eb97"
+  },
+  {
+    "path": "scripts/verify_trajectory_video.py",
+    "sha256": "831638fb6ab95c421ddabec7b259a25dd7bbe6a172e293f0cafa2bb838522e8d"
+  },
+  {
+    "path": "scripts/visual_study_viewer.html",
+    "sha256": "d6ca78db257919f0ba1f81dbd079c2a5c9029e65a9d4d7635247126a7dea4bf2"
+  },
+  {
+    "path": "scripts/visual_study_viewer.py",
+    "sha256": "09d1b1361f828114a53c0fa376052df3eec336c389615d8f274bfa3604f886e3"
+  },
+  {
+    "path": "research/alignment_methods.md",
+    "sha256": "636ea73ae694ab66f549e488811c02994c79468c8b75481d4ddbd8c6ebe23a1e"
+  },
+  {
+    "path": "research/alignment_methods.tex",
+    "sha256": "f70de34ecc3e0ae44e1de4aba3ae4dda439da1af271a997ec4483c5c334fc13d"
+  },
+  {
+    "path": "research/appearance_matching.tex",
+    "sha256": "3b83ee8590977f5dcfc1b96513a25e34d5b660d42894754f480b85835968081e"
+  },
+  {
+    "path": "research/appearance_study_body.tex",
+    "sha256": "feb6a2225b52d097e0b509e4ed201403102942c0d3faf0fbdfbf510e63b7aa28"
+  },
+  {
+    "path": "research/appendix_metrics_and_losses.tex",
+    "sha256": "3308c50aa8da375177a7dfec3cbd4b6c1ac140cadc9f4d644357a793278e5b17"
+  },
+  {
+    "path": "research/audit_raw_contact_sheet.png",
+    "sha256": "ff3efc257962f3a373d746944ad371b61613843e4742c935a51a14c6c3dcb961"
+  },
+  {
+    "path": "research/auto_feature_tables/matchers.tex",
+    "sha256": "6add7338d886674baa1ba55b244fc55cd44e47171e115773f230a5ff7f124902"
+  },
+  {
+    "path": "research/auto_feature_tables/trackers.tex",
+    "sha256": "d8d9b47f41a98bf54ea36c05941b1e696f6dd7622a2f0dcc71ca0d15335283cd"
+  },
+  {
+    "path": "research/auto_feature_tables/validation.tex",
+    "sha256": "3777e9ddf3999e643c29922380898c000544d2ec3db070d19925a60d850d48b4"
+  },
+  {
+    "path": "research/auto_feature_tables/values.tex",
+    "sha256": "b028fe64c097f3ab0a81b80166ebfdf7351ccada4604c295a34b4dc52b76af3b"
+  },
+  {
+    "path": "research/auto_features_note.tex",
+    "sha256": "a8f84bccef88b9625a8c78d79bd2e2752702b8050e57ab9ebcb45d1249290359"
+  },
+  {
+    "path": "research/bright_framewise_appearance.tex",
+    "sha256": "0966a774a4007e957fed124c94ff349c4d12bacc67892fddc77e28f1b22284a8"
+  },
+  {
+    "path": "research/bright_framewise_appearance_appendix.tex",
+    "sha256": "4af2da2ced5d9b7e7293d2e693dd09c2ebff4e11492651bf4ba10ffbfe38d6cc"
+  },
+  {
+    "path": "research/brute_force_equations.tex",
+    "sha256": "02d62a664ab9b707727691bf82c2902d35d5ac1fc0422b2e64ff7d0a309db38e"
+  },
+  {
+    "path": "research/brute_force_overview.tex",
+    "sha256": "5c27451b6569deb5be30e23c0ad404ace5408dc23883e3f0ee1f1cf793fca838"
+  },
+  {
+    "path": "research/brute_force_overview_send.tex",
+    "sha256": "46d09ef90339ac52d37193f04576f3607c2c812649267b7bba6898514580eecc"
+  },
+  {
+    "path": "research/camera_report.tex",
+    "sha256": "44a14bf60027152106980208797a00a424e8a30ba4b6a022a521267cf3758cfe"
+  },
+  {
+    "path": "research/data_audit.md",
+    "sha256": "cf21dbfcbd03b21432c4b77248f8f8a69a94cc11a4efde85e83e1d0e54f7715b"
+  },
+  {
+    "path": "research/dataset_search.tex",
+    "sha256": "6e69afb63a78d304f3e4520364a5af1d7a5965b57234916a110be9cf9a7a1ae9"
+  },
+  {
+    "path": "research/ellipse_feature_methods.tex",
+    "sha256": "15909b7cb4d6866a25ebe9fb341a8325c248542a8193d44d0f9228b1a80cf324"
+  },
+  {
+    "path": "research/ellipse_tables/feature_errors.tex",
+    "sha256": "5316cfb367ad456b9d5c3bf361958e8ffe834642b309c43c49b0566de7acd462"
+  },
+  {
+    "path": "research/ellipse_tables/methods.tex",
+    "sha256": "493fe36298c10bd11c2daa53b5cdc6fccbf2c578bccd7e97415143c1b62dc6c1"
+  },
+  {
+    "path": "research/ellipse_tables/rollouts.tex",
+    "sha256": "7d84d20b00e02da1d23ab728a10b8f36e68484eacf740bf57f1c10c8bdcd1aff"
+  },
+  {
+    "path": "research/final_research_summary.tex",
+    "sha256": "0c1cac3d11719bfbcaf0902bdfa029fe0608d17697330ef8769c14120e58edcb"
+  },
+  {
+    "path": "research/final_research_summary_simple.tex",
+    "sha256": "06248caf79b49e6810827b6564124cd5fa16b60269e96edb475ef94453825700"
+  },
+  {
+    "path": "research/final_research_summary_simple_swapped.tex",
+    "sha256": "153378b80384c84b3038fbaac989a6ded6cd7e6bd809d6adb019963e75777904"
+  },
+  {
+    "path": "research/final_summary_tables/appearance.tex",
+    "sha256": "06e5342530aa67da2681399c89f298a7bb2accf2cf5233580bdc9ca857c8b3b1"
+  },
+  {
+    "path": "research/final_summary_tables/segmentation.tex",
+    "sha256": "3dd28b8f1e7e7e3a35578493438ae16c9740b9da10b7f551a438e399cc0a5601"
+  },
+  {
+    "path": "research/final_summary_tables/values.tex",
+    "sha256": "059c2abb2871391c5382cd932981c875c08e256c2c9da909d070b5b87d61f6d0"
+  },
+  {
+    "path": "research/fixed_feature_alignment.tex",
+    "sha256": "b97e29b4ac54f3ceaccca8e8ac4d03d7eed391d6c8c22e4b229c411fb4aebd97"
+  },
+  {
+    "path": "research/fixed_feature_tables/features.tex",
+    "sha256": "a4e932938eda23eb826861945a25c9762bc3823ef20a4fc0cda712f312f9cc8f"
+  },
+  {
+    "path": "research/fixed_feature_tables/levels.tex",
+    "sha256": "8663b2e637e77079d25b332286f6ffe909c0392159320700bb43e955b912c793"
+  },
+  {
+    "path": "research/fixed_feature_tables/results.tex",
+    "sha256": "6df252995d9e49f0fccf8defdaa92a065134f1f9efa47f3951c48f1675dfd399"
+  },
+  {
+    "path": "research/fixed_feature_tables/values.tex",
+    "sha256": "e158fb6eb232a72498c3ea4a175de09a473621d50a698ad14817b5f3fa6ad817"
+  },
+  {
+    "path": "research/fixed_feature_tables/variants.tex",
+    "sha256": "326cdaaaf6f5d2051fdb8aee279759a6e4df692597cc55967d0fc5d58dedc070"
+  },
+  {
+    "path": "research/fixed_features/annotations.json",
+    "sha256": "82bdd96539f1a80c8ce00e6001a27a9dcf4767ea008a2b83b52523f1341ecd1e"
+  },
+  {
+    "path": "research/fixed_features/auto_features.json",
+    "sha256": "b6a04407f2d1c2f45e30a1cc7a32629d6a95b36d10591c38a2e6795de902613f"
+  },
+  {
+    "path": "research/framewise_appearance.tex",
+    "sha256": "bd66db687a0fd6d97b0b98fda5485d67fad996ca5327ba07295555986e706e56"
+  },
+  {
+    "path": "research/framewise_appearance_appendix.tex",
+    "sha256": "f9b54092e79261ae3ff40461bd2bdae2406db0b4a5eb7edcce69e0ef8d09e6db"
+  },
+  {
+    "path": "research/gate_bright_doorway.tex",
+    "sha256": "294e7dd28e019a06c69480a41db52e7de17235ef4c0944b81095df8947ae9a02"
+  },
+  {
+    "path": "research/gate_bright_doorway_appendix.tex",
+    "sha256": "9528a01f907ad3ccd11c4d3e4e6b3e0256744151813f4cc3a3a956e5efbcf6fb"
+  },
+  {
+    "path": "research/gate_bright_doorway_body.tex",
+    "sha256": "788c66e2b4e38bbcf4769a145de8b7cbb6a036ff3c998750ad9b3c4aa9aa4657"
+  },
+  {
+    "path": "research/gate_deployment.json",
+    "sha256": "8fe816354b70327392af75cb4953deb8c1f61dbff553b085a0e7c8b6b83bc0b7"
+  },
+  {
+    "path": "research/gate_deployment.tex",
+    "sha256": "6af5e85f11c9a53707f8bc08f94be1d44b31b3f26dc97abc7a7f456690fa0eda"
+  },
+  {
+    "path": "research/gate_deployment_appendix.tex",
+    "sha256": "c0ec3733b8ff16ef567306e7c5192901c27d391c2ca69514f894eb21709d5ad4"
+  },
+  {
+    "path": "research/gate_deployment_restored.tex",
+    "sha256": "0f39f371b083ca45d6e48cbb81b514798cb6fb947a8dfd96b256afa9ac749fb1"
+  },
+  {
+    "path": "research/gate_doorway_appendix.tex",
+    "sha256": "886abb5a20b09f355db37a8d3dcda4bec2dde3b0056ed47ed7cdb2e108b3adb4"
+  },
+  {
+    "path": "research/gate_doorway_investigation.tex",
+    "sha256": "b7cf3ccdfb42a4b51812d873a53ca268f58d33e9eca10fa49c2ee7f11cc92b51"
+  },
+  {
+    "path": "research/gate_doorway_investigation_body.tex",
+    "sha256": "29c86a570dd5e359b497bc11f14373da6bc78b1503f9cee9dc552cf551d935cf"
+  },
+  {
+    "path": "research/gate_ellipse_deployment.json",
+    "sha256": "a09657b05e012796e5703bcbcf20566cd469f58dfc97cb490cdce0373ac1c838"
+  },
+  {
+    "path": "research/gate_mixed_training.tex",
+    "sha256": "344502c71a8a0870ee3c1b39a80ad48b301b6eedfc14db9d97307f0cde4818cb"
+  },
+  {
+    "path": "research/gate_mixed_training_body.tex",
+    "sha256": "48cb7d353eeaab55de280a140cf4a6f862c25658d8c7917b08409fe7afdd1a9b"
+  },
+  {
+    "path": "research/gate_patch20_training.tex",
+    "sha256": "006ee2e382a01654315de53af89c627647c72c90a757f3d7fbddcd5aca9cab3d"
+  },
+  {
+    "path": "research/gate_patch20_training_appendix.tex",
+    "sha256": "40323a4b855b3f4cf4b466b16054f6bd930d4de61d2516f35b12047a28565683"
+  },
+  {
+    "path": "research/gate_segmentation_body.tex",
+    "sha256": "011f330f53827ae870ee55f80480c60156ebd7e2cea9d8585cfc6960f1e08e2c"
+  },
+  {
+    "path": "research/gate_segmentation_sim.tex",
+    "sha256": "3efaf45f62f76feb47f4f0b7a4c7dc1da26f2ac3d5c5958a2edda4f8df3619b4"
+  },
+  {
+    "path": "research/inputs/starling_floor_plane.json",
+    "sha256": "7a57edc7bfdcb6d7cc941d599be8f737340174155d137621240f15393c746c1e"
+  },
+  {
+    "path": "research/lens_model.json",
+    "sha256": "f59983f048558f7a59acb550cf6d2a351bbe113ef32e571342786cb791c099f4"
+  },
+  {
+    "path": "research/lens_model_note.tex",
+    "sha256": "1b8c0e017b27d7bb43c32bd9ced9dd480fed44face39ff8720118799504ebc66"
+  },
+  {
+    "path": "research/lens_tables/bias.tex",
+    "sha256": "f8ed437fa631c13937a309027bdc4912f1a644195386c65416237e9d866ccaae"
+  },
+  {
+    "path": "research/lens_tables/values.tex",
+    "sha256": "693ef66ec8f25be184037deb9d4d0d8ed617626330bc4de94c7a97326c751e41"
+  },
+  {
+    "path": "research/loss_prior_note.tex",
+    "sha256": "bf7b40f8f43b5621441ae0cc780f007152a622c13bc62bacc4416164ba9b3f62"
+  },
+  {
+    "path": "research/novelty_review.md",
+    "sha256": "8fd7f20a6418b48a7f87bbd1c0f59a85f356927ca420a1d77294413ac0ea5290"
+  },
+  {
+    "path": "research/patch_check_note.tex",
+    "sha256": "418862e2be49271e206614213569fc2d486b32c2681d88537299f8f83e32c24a"
+  },
+  {
+    "path": "research/per_frame_alignment.tex",
+    "sha256": "2ae7f8f267c86e3d9926eb03fb00b6e0741eb3dfa542bf15d9a8f068b97ab7ba"
+  },
+  {
+    "path": "research/per_frame_tables/by_count.tex",
+    "sha256": "28fe16552fffcdff9bbc1f093c6e16e8752469669dfd9dc431906e10fa410278"
+  },
+  {
+    "path": "research/per_frame_tables/values.tex",
+    "sha256": "108dd6dc8ee95fc2919d36cecf7a69a6729be5bbf4811abc91ef100f378d5145"
+  },
+  {
+    "path": "research/raw_contact_sheet.png",
+    "sha256": "18c8e1b970bf5dfcda944de85df148cdb68fe433c8fa00f67aaf9a7d80cb56e4"
+  },
+  {
+    "path": "research/registration_candidate.json",
+    "sha256": "7b623d096886ce1a5fc57e51cb079629c8728c972ecf6a9be127a67f25fa4996"
+  },
+  {
+    "path": "research/registration_diagnostic.md",
+    "sha256": "38dc6bf2580537c63ff5cdc57028a4def415c9c612bd702d8f1a56bbdeb484dc"
+  },
+  {
+    "path": "research/registration_fixed_features.json",
+    "sha256": "9465d567f7e10d1d8ecc83bb281a62314578939ac0f44a77d016af3f71b54d00"
+  },
+  {
+    "path": "research/registration_landmarks_free_scale.json",
+    "sha256": "23aa3300c502ed53669ead612d01af23c66c88f0a42151f754c0413e82014b17"
+  },
+  {
+    "path": "research/registration_landmarks_rigid.json",
+    "sha256": "33d323d949be581084ce8f6dcf75be0b461dcf7aebd4b761c11f6579318139e1"
+  },
+  {
+    "path": "research/registration_user_G.json",
+    "sha256": "c15c0efde8ca071097d911eb7cc92e41a626ec5f5192314e3d594948c4a4081d"
+  },
+  {
+    "path": "research/response_fitting_body.tex",
+    "sha256": "19f1efa755cec087211fe6112cfa96548c43f1c9e4b4cb1a4df64bfc8ad157a5"
+  },
+  {
+    "path": "research/response_fitting_body_swapped.tex",
+    "sha256": "17e2482b7d0b9ca38a0ff7f03c508bf8d8dd7bf6a7a2d969aeb30a6546dbd011"
+  },
+  {
+    "path": "research/response_fitting_note.tex",
+    "sha256": "9182d6e3092b41ea2e9d7043abb598dbf74547b831d8849311ec70bd0eb01889"
+  },
+  {
+    "path": "research/scene_discovery.md",
+    "sha256": "7105fe2f0855e55b9d359ecec18b07b9a82a55c9f694d865d9124a40bdea9726"
+  },
+  {
+    "path": "research/sep25_appearance_refinement.tex",
+    "sha256": "520564fb66ce4afa2ecbd067191b425b4d89b69ce276673b02c07afbc8a8e0af"
+  },
+  {
+    "path": "research/sep25_appearance_refinement_body.tex",
+    "sha256": "cc9afe7acd36f0ed29d9abebe3d989e44ce73b4ab2671c91fc65b2e196def182"
+  },
+  {
+    "path": "research/sep25_exposure.tex",
+    "sha256": "1f0c83ee6dc026feac791fcb1c9fc4dfac26ec28a19ad6bf3f7c4e16a8c0a4e0"
+  },
+  {
+    "path": "research/sep25_exposure_body.tex",
+    "sha256": "1f8defcb923580475d6ede304a155c2c36f20de249f9cbebff2c8eaa3c519c92"
+  },
+  {
+    "path": "research/sep25_final_frame_audit.tex",
+    "sha256": "f571bb64b16c3954a6af9d52c7aac8a780c35b044ebd6345ce1cdfe3df3a53e6"
+  },
+  {
+    "path": "research/sep25_final_frame_audit_body.tex",
+    "sha256": "1c49b551c20394280719c8c6406de1913683313d4da3a6d52eb5826836e50ecd"
+  },
+  {
+    "path": "research/sep25_pipeline.tex",
+    "sha256": "af9539a27c9b7fa767faf61d024751e69a9e94685737aba9394caa2ea88da25b"
+  },
+  {
+    "path": "research/sep25_pipeline_body.tex",
+    "sha256": "2f5709c9f48e2dfe182224cfa26d0c93f9f52278358a5d1fa6c404464fe9282a"
+  },
+  {
+    "path": "research/sep25_real_gate.tex",
+    "sha256": "4db766744d667c8b08fb0a4c223965b406d6f7187a7adf48c65dfc9b048dd9df"
+  },
+  {
+    "path": "research/sep25_real_gate_body.tex",
+    "sha256": "2894802b47ef03b4d2341e2156d4038729a6e1efedba5ecdaecf6019280ceac4"
+  },
+  {
+    "path": "research/starling_masking.tex",
+    "sha256": "0628ad780b90ccdd3722d717b2d4fa40a83c4c54ba698bc7b328285b277098c2"
+  },
+  {
+    "path": "research/starling_masking_results.tex",
+    "sha256": "2a4b1e3c5620700e0fb2db1b6811cbeade2d7005697ef9d8446201352f733ccf"
+  },
+  {
+    "path": "research/starling_parameter_table.tex",
+    "sha256": "97dfaa69d4a788cd6a134ec56d2574d0e50ef42dfc685d8eb3ffc4666042f761"
+  },
+  {
+    "path": "research/starling_run4_experiment.tex",
+    "sha256": "c74beae9656f1c3d2ead74a395ce7c6b569035b8b3bbe6ae6f130a133e4c2dbb"
+  },
+  {
+    "path": "research/starling_step1.tex",
+    "sha256": "83bfd0abc293c6cc7e752d37cd23fa221c6c97945ad2b715e20f1520c6f491ab"
+  },
+  {
+    "path": "research/starling_step1_broad_body.tex",
+    "sha256": "2a0c1e29403d18c5d9d98f0daef8025248c2186cde0a14cb7a68cc74c5aa983c"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/comparison.tex",
+    "sha256": "073684476cda82b74ec8ee4749d32177e1dbec76f0a53a4550c89c6643c6f69a"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/knots.tex",
+    "sha256": "0cd2a3ee90ea0b0f4fcee1a78040240d66337b2ec2cbd0a4f187418b358d6f6e"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/leaderboard.tex",
+    "sha256": "52edb79b3e9c78741f3d3f6da09d8a0fd0cc60be39add58b8885269ad8257b37"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/metadata.tex",
+    "sha256": "12d0299f44824f8a31b303143aa2f4c69357ddd4cb823e129d9c19c102da6243"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/prefix_1.tex",
+    "sha256": "58c7a9dc5cfe161567aa5f8d6d314ef91647aa7dc22ec866d4fdbe2304523a56"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/prefix_2.tex",
+    "sha256": "b95f6692c7645358058353483193568aac86d948ee4370f347c14db72a856a7f"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/raw.tex",
+    "sha256": "0c760edd7af9fa28929e534940d8e7c4ee24f5671b96724c204e8462a98d2224"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/reference.tex",
+    "sha256": "74b3dc125a49bdb48a962bbadaf45d81cf79b5dd424a579923b3a42235eca462"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/reference_comment.tex",
+    "sha256": "353428d7b625da7da4ca2942ad818a221d697397fd934836b0c210aff5928360"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/result_comment.tex",
+    "sha256": "536a9a45b2895d060859edc86c88158cff4a95cd506cdbec5368d7c3452c1ad1"
+  },
+  {
+    "path": "research/starling_step1_broad_tables/selected.tex",
+    "sha256": "b6c287d008e6d17f0502192e37b9d3685944583ebcee5e6d3840711eb89441ad"
+  },
+  {
+    "path": "research/starling_step1_diagrams.tex",
+    "sha256": "6e4664de50df60d2f03efb0032d8906e2751cc3776b3d0ef48ecd4d7fb13f9e1"
+  },
+  {
+    "path": "research/starling_step1_tables/blur.tex",
+    "sha256": "ed93d5768ca1ee899db50f6273972ea91c2adf33e33c6b7725729cff5d79b4ef"
+  },
+  {
+    "path": "research/starling_step1_tables/examples.tex",
+    "sha256": "e90904171cfabf5cc0cbdfa23e8cb55440d797c1b1f586a73c1e08194ebafd95"
+  },
+  {
+    "path": "research/starling_step1_tables/gain.tex",
+    "sha256": "ddb1930a489684c2b65bf48268eb42d72ca11d1a03263246c9bc8044595c2cca"
+  },
+  {
+    "path": "research/starling_step1_tables/gamma.tex",
+    "sha256": "7518239a6ca069e54f415707be7f18af37ffe7b7f37c7c8eff7f6457dd6c4f68"
+  },
+  {
+    "path": "research/starling_step1_tables/grayscale.tex",
+    "sha256": "921bf312af7871ee9b4ffbcc85f125b1510e0b5bc23729fb18ab80597883da53"
+  },
+  {
+    "path": "research/starling_step1_tables/offset.tex",
+    "sha256": "89a3d9b49352ac483f0c1676c2a5f46f9be1ad14c124abf9a36487e504d89a26"
+  },
+  {
+    "path": "research/starling_step1_unmasked_appendix.tex",
+    "sha256": "17332abeb1efd4ed20df8fd4a486106082600f8832924f312a0f3be46743f55c"
+  },
+  {
+    "path": "research/starling_step1_unmasked_tables/blur.tex",
+    "sha256": "2e532d74e298b0e994a953865a17b7492f7da8cb93abee7ce7555a6ab9438292"
+  },
+  {
+    "path": "research/starling_step1_unmasked_tables/examples.tex",
+    "sha256": "d8194f57faef984b48bf62d0332397207613a3a95d6dca0a920095044e168bd2"
+  },
+  {
+    "path": "research/starling_step1_unmasked_tables/gain.tex",
+    "sha256": "83e34770258fff3ec0251504ca1df6edb494fb6f0cc7c63f663ed6f4fc2b865b"
+  },
+  {
+    "path": "research/starling_step1_unmasked_tables/grayscale.tex",
+    "sha256": "9f4885e10ef3e25a93176ced2e296a74e8f6b11cbe45b5a70707a96f7137e2e5"
+  },
+  {
+    "path": "research/starling_step1_unmasked_tables/values.tex",
+    "sha256": "67c9d076fda66d56fb071c523d4a5ab8c6eb42cbce2b1ca0d7265f264f215b87"
+  },
+  {
+    "path": "research/step2_proposal.tex",
+    "sha256": "34487ba1eb3bdbe056e5cbbd4c14fcb2f9d3074baa2b680edaf80c166d012a62"
+  },
+  {
+    "path": "research/synchronization_diagnostics.png",
+    "sha256": "d4056c380dd97d3b0c4cdae64895d4050c27dd21c28fd716d750d87606082b65"
+  },
+  {
+    "path": "research/synchronization_diagnostics.tex",
+    "sha256": "4e77757c011e79b03db2841a32129a9117f271053fe1a2e01ae334746ff97d9f"
+  },
+  {
+    "path": "research/synchronization_report.md",
+    "sha256": "96c257d9d2b961c2f420a2ba8fc971ee0d936b5896d12bf9d5bb72e333994a9e"
+  },
+  {
+    "path": "research/visual_research_journal.json",
+    "sha256": "929e53b5b440968ad1e70110a921b8db90595fa31085c2acc38c915ad93cde82"
+  },
+  {
+    "path": "research/visual_research_log.tex",
+    "sha256": "7cbaf021949956399c81dffe56b51a095ae182e95cd9dc4b38dcfa9dc0e2b61d"
+  },
+  {
+    "path": "research/visual_research_log_body.tex",
+    "sha256": "60b26f6dbb385cb07c95f7756e4b850681b48a28c2abd69605daaf0868a98232"
+  },
+  {
+    "path": "research/visual_study_manifest.json",
+    "sha256": "6bf52fc1cdaab52542f74707f102c8dbeaacb2955b53c291f6d935f2dead103c"
+  },
+  {
+    "path": "research/visual_study_tables/appearance_families.tex",
+    "sha256": "21b6cef41ee7c7bfbd70b364ef50b3d31cb94137c0efd8e0edc5e0fdc285642f"
+  },
+  {
+    "path": "research/visual_study_tables/appearance_sanity.tex",
+    "sha256": "7b7ea0c9587e834fcbd914721845a26109cc395aefa0550d9d59a2aabe53b05e"
+  },
+  {
+    "path": "research/visual_study_tables/appearance_test.tex",
+    "sha256": "8dc9fbda184c1a088732d50abbf563cdeb46963eb41557c49bfbecf43fbd8089"
+  },
+  {
+    "path": "research/visual_study_tables/gate_dataset.tex",
+    "sha256": "83136ce8212f74a3e6b737bb28041ac206b71fca8c7a179fe312b5157a067db7"
+  },
+  {
+    "path": "research/visual_study_tables/gate_experiments.tex",
+    "sha256": "0955f595b9a1086b63376d4cee16d4d7b83b8d86bb496bd5b2099f4e5981b93c"
+  },
+  {
+    "path": "research/visual_study_tables/gate_groups.tex",
+    "sha256": "47c55e8734de9d5c864b338a633ea7bc954a2786a908cb42eb5317170a19e299"
+  },
+  {
+    "path": "research/visual_study_tables/gate_test.tex",
+    "sha256": "99fd16b46ecfd12a3062993461e2c51019fbfed12c0136e8416d2db44273e091"
+  },
+  {
+    "path": "research/visual_study_tables/gate_values.tex",
+    "sha256": "5ea6666a5dc07c33434c0e6864231306e9eb4bf4ec185503d2df1ef633478c58"
+  },
+  {
+    "path": "docs/Brute Force Frame Matching (1).pdf",
+    "sha256": "ee4e82d1637364eed12138a1b80dfef6cf9fe94a8e4605d865537f11192da164"
+  },
+  {
+    "path": "docs/GSplat Rendering Alignment with Crazyflie Images.pdf",
+    "sha256": "4c5951b3979d7c9c7ee5d8d6cbead61874c9d37d0b446f0767dbdb8fd7e021a0"
+  },
+  {
+    "path": "docs/RUNBOOK.md",
+    "sha256": "b6350066d25f5c1f2e50ad880d981505a6efd20ef724375206e1d9233c942695"
+  },
+  {
+    "path": "docs/alignment_methods.pdf",
+    "sha256": "b76395b1d458e6191cf0600ed64f1bef724b45ac80daf21d75d2c316dfa084cf"
+  },
+  {
+    "path": "docs/all_gate_models_comparison.pdf",
+    "sha256": "83f5b5fcfb8830c9ef3e328d949a708aa2014a4e662d4b11e8a2deca22138602"
+  },
+  {
+    "path": "docs/appearance_matching.pdf",
+    "sha256": "654db32c8104f8b292612c71b6554a02355a1a85ae300d8950c284c180a7df49"
+  },
+  {
+    "path": "docs/auto_features.pdf",
+    "sha256": "c5da6126ede9828e7810471aebe80bee79a084cc32ea1b92238ea4149ee1fb90"
+  },
+  {
+    "path": "docs/bright_framewise_appearance.pdf",
+    "sha256": "61e83de02d286b1c9642cfb7a8dc78e5617d7488e166fba8f5bbebfb74350136"
+  },
+  {
+    "path": "docs/brute_force_equations.pdf",
+    "sha256": "ce9b6c4a8e246af431c9e142c73b9d0e7224aeb7b63ca95425a9418f051c0ae1"
+  },
+  {
+    "path": "docs/brute_force_overview.pdf",
+    "sha256": "b0b851dbb90c446db46e62d0e1357070ae60dbfbe951a881c98800b2cc55711d"
+  },
+  {
+    "path": "docs/brute_force_overview_send.pdf",
+    "sha256": "c87d47a4d6d9c88945f54d843731177f5ef4d20b3e074f980d5cf9af492c0b1b"
+  },
+  {
+    "path": "docs/camera_report.pdf",
+    "sha256": "8b1dd9b802b08d6c8ce5bab50f503c6b1b305d49a2a31cae8b9f31203dd04e66"
+  },
+  {
+    "path": "docs/dataset_search.pdf",
+    "sha256": "87b2f60ca1dc52e4c44f8b2e4520d1acb67f671b4226035fac1f4d358b16aef6"
+  },
+  {
+    "path": "docs/ellipse_feature_methods.pdf",
+    "sha256": "38fc49f319936cb4a0add0fa4096f2bfaef6acbe84ecc535fe1f98d8d36c1e2a"
+  },
+  {
+    "path": "docs/ellipse_features_explanation.pdf",
+    "sha256": "3a8ba6c86537c7dabe32a21d58eb1bbe37ef8b868a1c3d43a2a30ecd7bc03d8a"
+  },
+  {
+    "path": "docs/final_research_summary.pdf",
+    "sha256": "93564d7a8626998a0edcef13d9bd8622ef8a85370aa4aa92b663e6c898ad27a0"
+  },
+  {
+    "path": "docs/final_research_summary_simple.pdf",
+    "sha256": "54c6fd9a59fde08a55696b6b2c5bae694e63fb42e6c18a8f9ac572eb8850a689"
+  },
+  {
+    "path": "docs/final_research_summary_simple_swapped.pdf",
+    "sha256": "20ea5cbd356baf0d992f405dce4031628e877b6e6554fe2883298a6166fd10c1"
+  },
+  {
+    "path": "docs/fixed_feature_alignment.pdf",
+    "sha256": "f4ca0102ce70d9020249939089acc961895148d2387b30d1c880ed532016ad08"
+  },
+  {
+    "path": "docs/framewise_appearance.pdf",
+    "sha256": "e15040f1179a9f0d05268ce095230788c25fa63555993ca8ff4a0edf5383f1ee"
+  },
+  {
+    "path": "docs/gate_bright_doorway.pdf",
+    "sha256": "d198ee5c59247076a1bf1bbd7fde3a65a527e616e4769d54f88fb038d06ed35a"
+  },
+  {
+    "path": "docs/gate_deployment.pdf",
+    "sha256": "cdb5188b0f9b419b0f2d6ff9b940af221664aaec889d4757313e783cdf5eeba2"
+  },
+  {
+    "path": "docs/gate_doorway_investigation.pdf",
+    "sha256": "ea6eb00c2be86e9de665c7c67fd6804829dae3f8b8042643a6b3f0de7fa6ab2d"
+  },
+  {
+    "path": "docs/gate_mixed_training.pdf",
+    "sha256": "b33cb9f35b9b0a9c729055e8e9be916bf04114609e0072872db5f39fb09b1587"
+  },
+  {
+    "path": "docs/gate_patch20_training.pdf",
+    "sha256": "d549e8d6adf70c324cf986cf24ce5eec1c2f02db518fb31465b855eaa5eadfdf"
+  },
+  {
+    "path": "docs/gate_segmentation_sim.pdf",
+    "sha256": "1c5ace1c59034f6017e9cd72d2471ebdf5d3d13086d5af41e9946aaea4e5f586"
+  },
+  {
+    "path": "docs/lens_model.pdf",
+    "sha256": "9adf79ab66ce9d655a17d7e38bf7815d1132b94a4e9f91d50b38498a7348569a"
+  },
+  {
+    "path": "docs/loss_prior_note.pdf",
+    "sha256": "a5978718e9552d2ab08342d7f1032c063830aac74f790ea25658f9308d341c98"
+  },
+  {
+    "path": "docs/patch_check_note.pdf",
+    "sha256": "c364ab29c4bacaba05a6aa53682958a1dca3ffefefc5a0437ba7df29e8ebf80f"
+  },
+  {
+    "path": "docs/per_frame_alignment.pdf",
+    "sha256": "bb5a2f06055fbfa6e89a120ed106fb37bd12610ef07a903aef943737e15f0cb5"
+  },
+  {
+    "path": "docs/presentation.pdf",
+    "sha256": "0a38f90a79166100f81a02b50ff9216aed0c511af5ab2c94594ec5e08185df3b"
+  },
+  {
+    "path": "docs/response_fitting_note.pdf",
+    "sha256": "5da3cbf8316afa0dc48cf35d97e9b8812445fa9cef3ec12701326897e52f787f"
+  },
+  {
+    "path": "docs/sep25_appearance_refinement.pdf",
+    "sha256": "4c71580836952c5883208e2da848394b12f5312e36efcfbfcf1533400c84c8db"
+  },
+  {
+    "path": "docs/sep25_exposure.pdf",
+    "sha256": "733febdd84893cd77d1a88289bf7007853020d990af2b39884204f0e07f5f640"
+  },
+  {
+    "path": "docs/sep25_final_frame_audit.pdf",
+    "sha256": "fe5b16a653c78619d07cb195692166a8db59514fd082bbf6b802433d154547d5"
+  },
+  {
+    "path": "docs/sep25_pipeline.pdf",
+    "sha256": "0c492330c1ea934efbded549d496eb12f12725c831ea81cf7bbdb3e5571a8f2d"
+  },
+  {
+    "path": "docs/sep25_real_gate.pdf",
+    "sha256": "45201495502c8b428b4de4e1012c241cb7dfaaf31b9dd69e1beace1af7eb8947"
+  },
+  {
+    "path": "docs/starling_comparison.mp4",
+    "sha256": "716f98051de6d42bf92f98c06dd3c3f3f8f4d510cc7dd257a72feb80e3668aba"
+  },
+  {
+    "path": "docs/starling_landmark_alignment.jpg",
+    "sha256": "6e698be997c54275e684626a52047300428ffda413c86382b3357cb65e69cd83"
+  },
+  {
+    "path": "docs/starling_masking.pdf",
+    "sha256": "c66183a9658aed57589e385c4d3171ab405195df599ba4b01306a63fa29a3a12"
+  },
+  {
+    "path": "docs/starling_run4_experiment.pdf",
+    "sha256": "7b5d1a3b51174118e3782985330f98dce2690bd8100b428bab00c9738d318410"
+  },
+  {
+    "path": "docs/starling_step1.pdf",
+    "sha256": "0e6d7cf816ece307ec26de83754b7743b5f9d92b9bc0fcc122cab3c9666d6e4a"
+  },
+  {
+    "path": "docs/synchronization_diagnostics.pdf",
+    "sha256": "6097b5bf9ac2cd2c8c1db1eea20d1edb6945d8c4c0e1a5a215dd2804af0d39c0"
+  },
+  {
+    "path": "docs/video_presentation_update.pdf",
+    "sha256": "5cfec50818f9d4352553692a036a9b70858533a60bfd43640dc9983f69db1f4f"
+  },
+  {
+    "path": "docs/visual_research_log.pdf",
+    "sha256": "ad7e68c2b6bcb516fc720017ca2e5e47125cf2bf4d0e91bc93f60178ccb6cb95"
+  },
+  {
+    "path": "environments/crazyflie3dgs-freeze.txt",
+    "sha256": "a12881f950e69a82cfb5fabca04dc75e8350c8d6bf0c762a2cde4743158fa27f"
+  },
+  {
+    "path": "README.md",
+    "sha256": "3aec40cd116e681465c254da150f656754d98f491c9de575475f75de3c3690d3"
+  },
+  {
+    "path": "START_HERE.md",
+    "sha256": "3ee8793f474bec443fc04eb66a753d4cc69be89c5e53b2abd0ec3f344afc1a12"
+  },
+  {
+    "path": "requirements.txt",
+    "sha256": "24d7c916f40ffce06fe44584379b3db966ba696930233f2cd8b03de6a9dd0140"
+  }
+]

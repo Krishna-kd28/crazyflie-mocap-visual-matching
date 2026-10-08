@@ -1,0 +1,29 @@
+{
+  "purpose": "Tiny recorded fixture for numerical packaging parity; not held-out evaluation",
+  "frames": [
+    {
+      "run": "run_20260925T122400",
+      "index": 663,
+      "pose": "run_20260925T122400/pose.npz",
+      "real": "run_20260925T122400/real.png",
+      "render": "run_20260925T122400/render_rgb.png",
+      "expected": "run_20260925T122400/expected_fitted.png"
+    },
+    {
+      "run": "run_20260925T123004",
+      "index": 592,
+      "pose": "run_20260925T123004/pose.npz",
+      "real": "run_20260925T123004/real.png",
+      "render": "run_20260925T123004/render_rgb.png",
+      "expected": "run_20260925T123004/expected_fitted.png"
+    },
+    {
+      "run": "run_20260925T125125",
+      "index": 1371,
+      "pose": "run_20260925T125125/pose.npz",
+      "real": "run_20260925T125125/real.png",
+      "render": "run_20260925T125125/render_rgb.png",
+      "expected": "run_20260925T125125/expected_fitted.png"
+    }
+  ]
+}

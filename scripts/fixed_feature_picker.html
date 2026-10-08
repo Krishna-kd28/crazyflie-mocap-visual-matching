@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixed feature picker</title>
+<style>
+:root{--bg:#f6f4ef;--ink:#2a2620;--muted:#6f6555;--line:#d9d2c5;--accent:#1f6feb;--warn:#b4530a;--ok:#1a7f37;--panel:#ffffff}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{display:flex;align-items:center;gap:16px;padding:8px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:16px;margin:0}
+header .status{color:var(--muted);font-size:12px}
+header .status b{color:var(--ok)}
+#toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+#toolbar label{color:var(--muted);font-size:12px}
+#toolbar input[type=range]{width:360px}
+button{font:inherit;padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer}
+button:hover{border-color:#b8ae9d}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+button.danger{color:#a40e26}
+button.small{padding:2px 7px;font-size:12px}
+main{display:grid;grid-template-columns:1fr 360px;gap:0;height:calc(100vh - 98px)}
+.panels{display:flex;flex-wrap:wrap;gap:12px;padding:12px;overflow:auto;align-items:flex-start}
+.panel{position:relative;flex:0 0 auto}
+.ptitle{font-size:12px;color:var(--muted);margin:0 0 4px 2px;display:flex;justify-content:space-between}
+canvas.view{display:block;width:640px;height:480px;border:1px solid var(--line);background:#222;cursor:crosshair;touch-action:none}
+canvas.loupe{display:none;position:absolute;right:6px;top:26px;width:168px;height:168px;border:1px solid #999;background:#000;pointer-events:none;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+.coords{font-size:12px;color:var(--muted);margin-top:4px;min-height:16px}
+aside{border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;border:0;border-radius:0;background:#f1ede6;padding:8px}
+.tabs button.active{background:#fff;font-weight:600}
+.tab{display:none;padding:10px 12px;overflow:auto;flex:1}
+.tab.active{display:block}
+.feature{display:flex;align-items:center;gap:8px;padding:5px 6px;border-radius:6px;cursor:pointer;border:1px solid transparent}
+.feature:hover{background:#f6f3ec}
+.feature.selected{border-color:var(--accent);background:#eef4ff}
+.swatch{width:12px;height:12px;border-radius:3px;flex:0 0 auto}
+.feature .name{flex:1;font-weight:600}
+.feature .counts{font-size:11px;color:var(--muted);white-space:nowrap}
+.detail{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font-size:13px}
+.detail textarea{width:100%;height:48px;font:inherit;font-size:12px}
+.obs{font-size:12px;display:flex;justify-content:space-between;padding:2px 4px;border-radius:4px;cursor:pointer}
+.obs:hover{background:#f1ede6}
+.obs.here{background:#eef4ff}
+.note{color:var(--warn);font-size:12px}
+.hint{color:var(--muted);font-size:12px}
+.proposal{border:1px solid var(--line);border-radius:8px;padding:8px;margin-bottom:8px}
+.proposal .crops{display:flex;gap:6px;margin:6px 0}
+.proposal .crops div{font-size:11px;color:var(--muted);text-align:center}
+.proposal img{display:block;border:1px solid var(--line);image-rendering:pixelated}
+kbd{font:12px ui-monospace,monospace;background:#eee;border:1px solid #ccc;border-radius:4px;padding:0 4px}
+#help p{margin:6px 0}
+.pill{display:inline-block;font-size:11px;padding:0 6px;border-radius:10px;background:#eee;color:#444}
+.pill.confirmed{background:#dcf5e3;color:#1a5c2c}
+.pill.proposed{background:#fff1d6;color:#7a4a00}
+input[type=text]{font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:6px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#2a2620;color:#fff;padding:9px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:10;max-width:70vw}
+.toast.show{opacity:.96}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:12px;border:1px solid var(--line);font-size:12px;background:#fff}
+.chip .swatch{width:10px;height:10px}
+.cropbox{position:relative;display:inline-block;line-height:0}
+.cropbox svg{position:absolute;left:0;top:0;pointer-events:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>Fixed feature picker</h1>
+  <span class="status" id="status">loading…</span>
+  <span style="flex:1"></span>
+  <span class="status" id="gpu"></span>
+</header>
+<div id="toolbar">
+  <label>Run <select id="run"></select></label>
+  <button id="prev10" title="10 frames back (<)">«</button>
+  <button id="prev" title="previous frame (,)">‹</button>
+  <input type="range" id="slider" min="0" max="0" value="0">
+  <button id="next" title="next frame (.)">›</button>
+  <button id="next10" title="10 frames forward (>)">»</button>
+  <span id="frameinfo" class="hint"></span>
+  <label><input type="checkbox" id="sync" checked> sync zoom</label>
+  <label><input type="checkbox" id="showPred" checked> predictions</label>
+  <label><input type="checkbox" id="showOthers" checked> other features</label>
+  <label><input type="checkbox" id="blend"> blend real into render</label>
+  <button id="reset" class="small">reset zoom</button>
+  <span class="chip" id="selChip">no feature selected</span>
+</div>
+<main>
+  <div class="panels">
+    <div class="panel">
+      <div class="ptitle"><span id="realTitle">Real Crazyflie image</span><span id="realZoom"></span></div>
+      <canvas class="view" id="real" width="1280" height="960"></canvas>
+      <canvas class="loupe" id="realLoupe" width="336" height="336"></canvas>
+      <div class="coords" id="realCoords"></div>
+    </div>
+    <div class="panel">
+      <div class="ptitle"><span id="renderTitle">3DGS render at the same corrected pose</span><span id="renderZoom"></span></div>
+      <canvas class="view" id="render" width="1280" height="960"></canvas>
+      <canvas class="loupe" id="renderLoupe" width="336" height="336"></canvas>
+      <div class="coords" id="renderCoords"></div>
+    </div>
+    <div class="hint" style="flex-basis:100%">Dashed circle = where the current alignment predicts the feature. In the render it should sit on the feature (if not, the 3D point is wrong: check its render clicks). In the real image the gap to the true position is what the search will fix, so click the true position.</div>
+  </div>
+  <aside>
+    <div class="tabs">
+      <button class="active" data-tab="features">Features</button>
+      <button data-tab="proposals">Proposals</button>
+      <button data-tab="help">Help</button>
+    </div>
+    <div class="tab active" id="features">
+      <div style="display:flex;gap:6px">
+        <input type="text" id="newName" placeholder="new feature id, e.g. door_top_right" style="flex:1">
+        <button id="add" class="primary">Add</button>
+      </div>
+      <div class="hint" style="margin:6px 0">Select a feature, then click it in the render (two different frames) and in as many real frames as you can, spread over all runs.</div>
+      <div id="featureList"></div>
+      <div class="detail" id="detail"></div>
+    </div>
+    <div class="tab" id="proposals">
+      <div class="hint" id="propHint">Loading proposals…</div>
+      <div id="proposalList"></div>
+    </div>
+    <div class="tab" id="help">
+      <p><b>Goal.</b> Mark a few permanently fixed room features (door frame corners, wall panel corners, ceiling fixtures, pillar edges, wall/floor junctions) that are identical in the real recording and in the 3DGS scene. Do not use gates, mats, the curtain, chairs or anything that moved.</p>
+      <p><b>Render clicks</b> define where the feature is in the 3DGS scene. Click the feature in the render of two frames taken from clearly different positions (a second or more apart, so there is parallax); the picker triangulates it and shows the residuals. With one render click only, the point is a depth estimate (ray intersected with the local rendered surface) and the dashed circle can drift in other frames; add the second click.</p>
+      <p><b>Real clicks</b> are the observations. Click the same physical point in as many real frames as you can, over all four runs and from different viewpoints. Three or more per run per feature is a good target. Dashed circles show where the current alignment predicts the feature; the search will move the whole scene so predictions meet your real clicks.</p>
+      <p><b>Mouse.</b> Left click places or moves the selected feature's marker in that panel (one per feature per frame per panel). With no feature selected, a click creates a new feature (rename it in the side panel). Wheel zooms around the cursor, right-drag pans. The loupe shows an 8× view of the cursor.</p>
+      <p><b>Keys.</b> <kbd>,</kbd> <kbd>.</kbd> previous / next frame, <kbd>&lt;</kbd> <kbd>&gt;</kbd> ±10, arrows nudge the selected marker by 0.25 px (<kbd>Shift</kbd> 1 px), <kbd>Delete</kbd> removes it, <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> redo, <kbd>1</kbd>–<kbd>9</kbd> select a feature, <kbd>n</kbd> new feature, <kbd>Esc</kbd> deselect marker. The × next to an observation in the side panel removes that click.</p>
+      <p><b>Coordinates.</b> Real frames are shown exactly as recorded, and renders are produced in the same raw geometry with the calibrated lens model, so both panels distort the same way and clicks are stored in raw pixel coordinates. Beyond 199 px from the principal point (the bottom corners) the supplied lens model is extrapolated, so avoid placing clicks there. All geometry converts clicks to pinhole coordinates internally.</p>
+      <p><b>Saving</b> is automatic after every change, to <code id="annPath"></code>. Backups are kept in output/fixed_features/annotation_backups.</p>
+      <p><b>Proposals</b> are automatically detected candidates (corners matched between render and real image around the current alignment). Accept the ones that are truly the same fixed physical point; reject the rest. Accepted proposals become normal features you can edit.</p>
+    </div>
+  </aside>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+'use strict';
+const PALETTE=['#ff5b40','#ffb030','#44d3ee','#65c96b','#ad7aff','#ef76c4','#f2e34c','#4c8bf2','#ff8a5b','#3cc7a5','#c9a24c','#9bd14c'];
+const W=320,H=240;
+const S={index:null,ann:null,runIdx:0,pos:0,img:{real:null,render:null},selected:null,selMarker:null,
+  view:{real:{s:2,ox:0,oy:0},render:{s:2,ox:0,oy:0}},points:{},pred:{},proposals:[],hover:null,drag:null,pan:null,saveTimer:null,dirty:false};
+const $=id=>document.getElementById(id);
+const canvases={real:$('real'),render:$('render')};
+const loupes={real:$('realLoupe'),render:$('renderLoupe')};
+const run=()=>S.index.runs[S.runIdx];
+const frameIndex=()=>run().indices[S.pos];
+const color=fid=>PALETTE[Math.max(0,S.ann.features.findIndex(f=>f.id===fid))%PALETTE.length];
+const feature=fid=>S.ann.features.find(f=>f.id===fid);
+const kindKey=kind=>kind==='real'?'real_clicks':'render_clicks';
+function toast(msg,ms){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms||2400)}
+function status(t,ok){$('status').innerHTML=ok?'<b>'+t+'</b>':t;if(!ok&&!/^unsaved/.test(t))toast(t)}
+function updateChip(){const c=$('selChip');if(S.selected&&feature(S.selected)){c.innerHTML=`<span class="swatch" style="background:${color(S.selected)}"></span>clicking places: <b>${S.selected}</b>`}else{c.textContent='no feature selected: a click creates one'}}
+function snapshot(){S.history=S.history||[];S.history.push(JSON.stringify(S.ann));if(S.history.length>80)S.history.shift();S.future=[]}
+function restore(text){S.ann=JSON.parse(text);if(S.selected&&!feature(S.selected))S.selected=null;S.selMarker=null;scheduleSave();draw();renderList();renderDetail()}
+function undo(){if(!S.history||!S.history.length){toast('nothing to undo');return}S.future=S.future||[];S.future.push(JSON.stringify(S.ann));restore(S.history.pop());toast('undone')}
+function redo(){if(!S.future||!S.future.length){toast('nothing to redo');return}S.history.push(JSON.stringify(S.ann));restore(S.future.pop());toast('redone')}
+function renderGuidance(f){const n=(f.render_clicks||[]).length;if(n===1){toast('Render click 1 of 2: now find a frame taken from a clearly different position (jump with > or the slider), and click the same point in its render. Until then the 3D point is only a depth estimate.',6000)}else if(n>=2){setTimeout(()=>{const p=S.points[f.id]||{};const r=p.residual_px||[];if(!r.length){toast('Triangulated.');return}const bad=Math.max(...r)>2, weak=p.parallax_deg!==undefined&&p.parallax_deg<8;toast(`Triangulated from ${n} render clicks; residuals ${r.join(', ')} px, parallax ${p.parallax_deg}°.`+(bad?' Large residual: one render click is off, check both.':'')+(weak?` Weak parallax (distance uncertain by about ±${p.depth_uncertainty_m} m): add a render click from a frame several seconds away.`:' Good.'),bad||weak?7000:4000)},900)}}
+function nextName(){let n=S.ann.features.length+1;while(feature('feature_'+n))n++;return 'feature_'+n}
+async function api(path,body){const r=await fetch(path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:undefined);const j=await r.json();if(!r.ok)throw new Error(j.error||r.statusText);return j}
+function toImage(kind,x,y){const v=S.view[kind];return [(x-v.ox)/v.s-0.5,(y-v.oy)/v.s-0.5]}
+function toCanvas(kind,u,v){const w=S.view[kind];return [w.ox+(u+0.5)*w.s,w.oy+(v+0.5)*w.s]}
+function clampView(kind){const v=S.view[kind];v.s=Math.min(16,Math.max(2,v.s));v.ox=Math.min(0,Math.max(640-W*v.s,v.ox));v.oy=Math.min(0,Math.max(480-H*v.s,v.oy))}
+function loadImage(kind){return new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>res(null);im.src=`/img/${run().short}/${kind}/${String(frameIndex()).padStart(6,'0')}.png?t=${Date.now()%1000}`})}
+async function gotoFrame(runIdx,pos){S.runIdx=runIdx;S.pos=Math.min(run().indices.length-1,Math.max(0,pos));$('run').value=String(runIdx);$('slider').max=run().indices.length-1;$('slider').value=S.pos;
+  const [a,b]=await Promise.all([loadImage('real'),loadImage('render')]);S.img.real=a;S.img.render=b;S.selMarker=null;
+  $('frameinfo').textContent=`frame ${frameIndex()} (${S.pos+1}/${run().indices.length}), t = ${run().time_s[S.pos].toFixed(2)} s`+(b?'':' — render missing');
+  await refreshPredictions();draw();renderDetail()}
+async function refreshPredictions(){try{const j=await api(`/api/predict?run=${run().short}&index=${frameIndex()}`);S.points=j.points;S.pred=j.predictions}catch(e){status('prediction error: '+e.message)}}
+function clicksHere(f,kind){return (f[kindKey(kind)]||[]).filter(c=>c.run===run().run&&c.index===frameIndex())}
+function drawCross(ctx,x,y,col,big){ctx.strokeStyle=col;ctx.lineWidth=big?2:1.2;const g=4,l=big?14:9;ctx.beginPath();ctx.moveTo(x-l,y);ctx.lineTo(x-g,y);ctx.moveTo(x+g,y);ctx.lineTo(x+l,y);ctx.moveTo(x,y-l);ctx.lineTo(x,y-g);ctx.moveTo(x,y+g);ctx.lineTo(x,y+l);ctx.stroke()}
+function drawPanel(kind){const c=canvases[kind],ctx=c.getContext('2d'),dpr=2;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,640,480);ctx.imageSmoothingEnabled=false;const v=S.view[kind];const im=S.img[kind];
+  if(im)ctx.drawImage(im,v.ox,v.oy,W*v.s,H*v.s);
+  if(kind==='render'&&$('blend').checked&&S.img.real){ctx.globalAlpha=0.5;ctx.drawImage(S.img.real,v.ox,v.oy,W*v.s,H*v.s);ctx.globalAlpha=1}
+  if(!im){ctx.fillStyle='#ccc';ctx.font='14px sans-serif';ctx.fillText('image missing (render this run first)',20,40)}
+  ctx.font='11px sans-serif';
+  for(const f of S.ann.features){if(f.status==='rejected')continue;const sel=f.id===S.selected;if(!sel&&!$('showOthers').checked)continue;const col=color(f.id);
+    if($('showPred').checked&&S.pred[f.id]){const [px,py]=toCanvas(kind,...S.pred[f.id].xy);ctx.setLineDash([3,3]);ctx.strokeStyle=col;ctx.lineWidth=sel?1.5:1;ctx.globalAlpha=sel?0.95:0.5;ctx.beginPath();ctx.arc(px,py,7,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
+      const here=clicksHere(f,kind)[0];if(here){const [cx,cy]=toCanvas(kind,...here.xy);ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(cx,cy);ctx.stroke()}ctx.globalAlpha=1}
+    for(const cl of clicksHere(f,kind)){const [x,y]=toCanvas(kind,...cl.xy);ctx.globalAlpha=sel?1:0.55;drawCross(ctx,x,y,col,sel);
+      if(S.selMarker&&S.selMarker.fid===f.id&&S.selMarker.kind===kind){ctx.strokeStyle='#fff';ctx.lineWidth=1;ctx.strokeRect(x-6,y-6,12,12)}
+      ctx.fillStyle='rgba(0,0,0,.55)';const label=f.id;ctx.fillRect(x+6,y-14,ctx.measureText(label).width+6,13);ctx.fillStyle=col;ctx.fillText(label,x+9,y-4);ctx.globalAlpha=1}}
+  $(kind+'Zoom').textContent=`${v.s.toFixed(1)}×`}
+function drawLoupe(kind){const c=loupes[kind],ctx=c.getContext('2d');const im=S.img[kind];c.style.display=(S.hover&&im)?'block':'none';if(!S.hover||!im){return}ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#000';ctx.fillRect(0,0,336,336);
+  const z=16,r=10;const u=Math.round(S.hover.u),v=Math.round(S.hover.v);ctx.imageSmoothingEnabled=false;
+  const sx=u-r,sy=v-r;ctx.drawImage(im,sx,sy,2*r+1,2*r+1,0,0,(2*r+1)*z,(2*r+1)*z);
+  const cx=(S.hover.u-sx+0.5)*z,cy=(S.hover.v-sy+0.5)*z;
+  for(const f of S.ann.features){if(f.status==='rejected')continue;for(const cl of clicksHere(f,kind)){const x=(cl.xy[0]-sx+0.5)*z,y=(cl.xy[1]-sy+0.5)*z;drawCross(ctx,x,y,color(f.id),f.id===S.selected)}
+    if($('showPred').checked&&S.pred[f.id]&&(f.id===S.selected||$('showOthers').checked)){const x=(S.pred[f.id].xy[0]-sx+0.5)*z,y=(S.pred[f.id].xy[1]-sy+0.5)*z;ctx.setLineDash([4,4]);ctx.strokeStyle=color(f.id);ctx.beginPath();ctx.arc(x,y,12,0,Math.PI*2);ctx.stroke();ctx.setLineDash([])}}
+  ctx.strokeStyle='rgba(255,255,0,.9)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx-40,cy);ctx.lineTo(cx-6,cy);ctx.moveTo(cx+6,cy);ctx.lineTo(cx+40,cy);ctx.moveTo(cx,cy-40);ctx.lineTo(cx,cy-6);ctx.moveTo(cx,cy+6);ctx.lineTo(cx,cy+40);ctx.stroke()}
+function draw(){drawPanel('real');drawPanel('render');drawLoupe('real');drawLoupe('render')}
+function markSaved(){S.dirty=false;status('saved '+new Date().toLocaleTimeString(),true)}
+function scheduleSave(){S.dirty=true;status('unsaved changes…');clearTimeout(S.saveTimer);S.saveTimer=setTimeout(save,400)}
+async function save(){try{const j=await api('/api/annotations',{annotations:S.ann,run:run().short,index:frameIndex()});S.points=j.points||S.points;S.pred=j.predictions||S.pred;markSaved();draw();renderList();renderDetail()}catch(e){status('SAVE FAILED: '+e.message)}}
+function setClick(kind,u,v){if(!S.selected||!feature(S.selected)){const name=nextName();addFeature(name);toast(`Created ${name} and placed its first click here. Rename or describe it in the side panel.`,3500)}else{snapshot()}const f=feature(S.selected);const key=kindKey(kind);f[key]=f[key]||[];
+  let cl=clicksHere(f,kind).find(c=>c.method!=='auto_render_match');u=Math.round(u*10)/10;v=Math.round(v*10)/10;if(cl){cl.xy=[u,v]}else{f[key]=f[key].filter(c=>!(c.run===run().run&&c.index===frameIndex()));cl={run:run().run,index:frameIndex(),xy:[u,v],sigma_px:2.0,method:'manual',created:new Date().toISOString()};f[key].push(cl)}
+  S.selMarker={fid:f.id,kind};scheduleSave();draw();renderList();renderDetail();if(kind==='render')renderGuidance(f);
+  if(kind==='real'){const near=(f.real_clicks||[]).filter(c=>c.run===run().run&&c.index!==frameIndex()&&Math.abs(c.index-frameIndex())<=15);if(near.length)toast('Tip: this frame is within 15 frames of another click of this feature; the tracker fills in neighbouring frames by itself. Jump ahead (> key) to a clearly different viewpoint or another run.',4500)}}
+function removeSelectedMarker(){if(!S.selMarker)return;snapshot();const f=feature(S.selMarker.fid);const key=kindKey(S.selMarker.kind);const idx=frameIndex();f[key]=(f[key]||[]).filter(c=>!(c.run===run().run&&c.index===idx)&&!(c.method==='auto_render_match'&&c.derived_from===idx&&S.selMarker.kind==='render'));S.selMarker=null;scheduleSave();draw();renderList();renderDetail()}
+function nudge(du,dv){if(!S.selMarker)return;const f=feature(S.selMarker.fid);const cl=clicksHere(f,S.selMarker.kind).find(c=>c.method!=='auto_render_match');if(!cl)return;snapshot();cl.xy=[Math.round((cl.xy[0]+du)*100)/100,Math.round((cl.xy[1]+dv)*100)/100];scheduleSave();draw();renderDetail();}
+function addFeature(name){name=(name||'').trim().replace(/\s+/g,'_');if(!name){status('type a feature id first');return}if(feature(name)){status('feature id already exists');S.selected=name;renderList();return}
+  snapshot();S.ann.features.push({id:name,description:'',status:'confirmed',source:'user',created:new Date().toISOString(),render_clicks:[],real_clicks:[]});S.selected=name;$('newName').value='';scheduleSave();renderList();renderDetail();draw()}
+function renderList(){updateChip();const box=$('featureList');box.innerHTML='';S.ann.features.forEach((f,i)=>{if(f.status==='rejected')return;const d=document.createElement('div');d.className='feature'+(f.id===S.selected?' selected':'');const p=S.points[f.id]||{};
+  const n3=p.X?(p.method==='triangulation'?'△':'▽ needs 2nd render click'):'· no 3D';const res=p.residual_px&&p.residual_px.length?` r${Math.max(...p.residual_px).toFixed(1)}`+(p.dropped_render_clicks&&p.dropped_render_clicks.length?` (${p.dropped_render_clicks.length} ignored)`:''):'';
+  d.innerHTML=`<span class="swatch" style="background:${color(f.id)}"></span><span class="name">${i+1}. ${f.id}</span><span class="counts">${(f.render_clicks||[]).length} render ${n3}${res} · ${(f.real_clicks||[]).length} real</span>`;
+  d.onclick=()=>{S.selected=f.id;S.selMarker=null;renderList();renderDetail();draw()};box.appendChild(d)})}
+function renderDetail(){const box=$('detail');if(!S.selected||!feature(S.selected)){box.innerHTML='<div class="hint">No feature selected.</div>';return}const f=feature(S.selected);const p=S.points[f.id]||{};
+  let html=`<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:${color(f.id)}">${f.id}</b><span><span class="pill ${f.status}">${f.status}</span> <button class="small" id="rename">rename</button> <button class="small danger" id="delFeature">delete</button></span></div>`;
+  html+=`<textarea id="desc" placeholder="what physical point is this? (e.g. outer top-right corner of the door frame)">${f.description||''}</textarea>`;
+  if(p.X){html+=`<div class="hint">3D (${p.method}${p.parallax_deg!==undefined?', parallax '+p.parallax_deg+'°':''}): ${p.X.map(x=>x.toFixed(3)).join(', ')} m`+(p.residual_px&&p.residual_px.length?`; render residuals ${p.residual_px.join(', ')} px`:'')+(p.depth_std_m!==undefined?`; depth spread ${p.depth_std_m.toFixed(3)} m`:'')+`</div>`}
+  if(p.note)html+=`<div class="note">${p.note}</div>`;
+  if(S.pred[f.id]){const here=clicksHere(f,'real')[0];if(here){const dx=here.xy[0]-S.pred[f.id].xy[0],dy=here.xy[1]-S.pred[f.id].xy[1];html+=`<div class="hint">This frame: real click is ${Math.hypot(dx,dy).toFixed(1)} px from the current-alignment prediction.</div>`}}
+  for(const kind of ['render','real']){const list=(f[kindKey(kind)]||[]).slice().sort((a,b)=>a.run.localeCompare(b.run)||a.index-b.index);html+=`<div style="margin-top:6px"><b>${kind} clicks (${list.length})</b></div>`;
+    for(const c of list){const here=c.run===run().run&&c.index===frameIndex();html+=`<div class="obs${here?' here':''}" data-run="${c.run}" data-index="${c.index}"><span>${c.run.slice(-6)} : ${c.index}${c.method&&c.method!=='manual'?' <span class="pill">'+c.method.replace('auto_render_match','auto')+'</span>':''}</span><span>${c.xy[0].toFixed(1)}, ${c.xy[1].toFixed(1)} <button class="small obsdel" data-kind="${kind}" data-run="${c.run}" data-index="${c.index}" title="remove this click">×</button></span></div>`}}
+  box.innerHTML=html;
+  $('desc').onchange=e=>{f.description=e.target.value;scheduleSave()};
+  $('rename').onclick=()=>{const n=prompt('New feature id',f.id);if(!n||n===f.id)return;const id=n.trim().replace(/\s+/g,'_');if(feature(id)){alert('id exists');return}snapshot();f.id=id;S.selected=id;scheduleSave();renderList();renderDetail();draw()};
+  $('delFeature').onclick=()=>{if(!confirm(`Delete feature ${f.id} and all its clicks?`))return;snapshot();S.ann.features=S.ann.features.filter(x=>x.id!==f.id);S.selected=null;S.selMarker=null;scheduleSave();renderList();renderDetail();draw()};
+  box.querySelectorAll('.obs').forEach(el=>el.onclick=()=>{const ri=S.index.runs.findIndex(r=>r.run===el.dataset.run);const pos=S.index.runs[ri].indices.indexOf(Number(el.dataset.index));gotoFrame(ri,pos)});
+  box.querySelectorAll('.obsdel').forEach(b=>b.onclick=e=>{e.stopPropagation();snapshot();const key=kindKey(b.dataset.kind);const idx=Number(b.dataset.index);f[key]=(f[key]||[]).filter(c=>!(c.run===b.dataset.run&&c.index===idx)&&!(c.method==='auto_render_match'&&c.derived_from===idx&&c.run===b.dataset.run));scheduleSave();draw();renderList();renderDetail()})}
+// --- proposals ---------------------------------------------------------
+function cropHtml(run,index,kind,u,v,r,s){r=r||18;s=s||4;const size=(2*r+1)*s;const cx=(r+0.5+(u-Math.round(u)))*s,cy=(r+0.5+(v-Math.round(v)))*s;const g=7,l=22;
+  const lines=`<line x1="${cx-l}" y1="${cy}" x2="${cx-g}" y2="${cy}"/><line x1="${cx+g}" y1="${cy}" x2="${cx+l}" y2="${cy}"/><line x1="${cx}" y1="${cy-l}" x2="${cx}" y2="${cy-g}"/><line x1="${cx}" y1="${cy+g}" x2="${cx}" y2="${cy+l}"/><circle cx="${cx}" cy="${cy}" r="${s*0.6}" fill="none"/>`;
+  return `<div class="cropbox"><img src="/api/crop?run=${run.slice(-6)}&index=${index}&kind=${kind}&u=${u}&v=${v}&r=${r}&s=${s}" width="${size}" height="${size}"><svg width="${size}" height="${size}"><g stroke="#000" stroke-width="3.5" opacity=".7">${lines}</g><g stroke="#ffe100" stroke-width="1.5">${lines}</g></svg></div>`}
+async function loadProposals(){try{const j=await api('/api/proposals');S.proposals=j.proposals||[];S.propMeta=j;renderProposals()}catch(e){$('propHint').textContent='proposals unavailable: '+e.message}}
+function renderProposals(){const box=$('proposalList');box.innerHTML='';const rejected=new Set(S.ann.rejected_proposals||[]);const accepted=new Set(S.ann.features.map(f=>f.proposal_id).filter(Boolean));
+  const pending=S.proposals.filter(p=>!rejected.has(p.id)&&!accepted.has(p.id));
+  $('propHint').textContent=S.proposals.length?`${pending.length} pending, ${accepted.size} accepted, ${rejected.size} rejected. Accept only points that are the same fixed physical feature in both images.`:'No proposals yet. Run scripts/propose_fixed_features.py to generate candidates.';
+  for(const p of pending.slice(0,40)){const d=document.createElement('div');d.className='proposal';const r=p.render,ob=p.real[0];
+    d.innerHTML=`<div style="display:flex;justify-content:space-between"><b>${p.id}</b><span class="hint">score ${p.score.toFixed(2)} · ${p.real.length} real frames</span></div><div class="hint">${p.description||''}</div>
+      <div class="crops"><div>${cropHtml(r.run,r.index,'render',r.xy[0],r.xy[1])}<br>render ${r.run.slice(-6)}:${r.index}</div><div>${cropHtml(ob.run,ob.index,'real',ob.xy[0],ob.xy[1])}<br>real ${ob.run.slice(-6)}:${ob.index}</div></div>
+      <div class="hint">Crosshair = the exact proposed point (${r.xy[0].toFixed(1)}, ${r.xy[1].toFixed(1)} in the render). Accept only if the real crosshair sits on the same fixed physical point.</div>
+      <div style="display:flex;gap:6px"><button class="small primary" data-act="accept">Accept</button><button class="small danger" data-act="reject">Reject</button><button class="small" data-act="view">View in frame</button></div>`;
+    d.querySelector('[data-act=accept]').onclick=()=>{snapshot();const id=(p.suggested_id||p.id).replace(/\s+/g,'_');let fid=id,k=2;while(feature(fid))fid=`${id}_${k++}`;
+      S.ann.features.push({id:fid,description:p.description||'accepted proposal',status:'confirmed',source:'proposal',proposal_id:p.id,created:new Date().toISOString(),
+        render_clicks:[{run:r.run,index:r.index,xy:r.xy.slice(),sigma_px:2.0,method:'proposal_corner'}],
+        real_clicks:p.real.map(o=>({run:o.run,index:o.index,xy:o.xy.slice(),sigma_px:2.5,method:'proposal_ncc',ncc:o.ncc}))});
+      S.selected=fid;scheduleSave();renderList();renderDetail();renderProposals();draw()};
+    d.querySelector('[data-act=reject]').onclick=()=>{snapshot();S.ann.rejected_proposals=S.ann.rejected_proposals||[];S.ann.rejected_proposals.push(p.id);scheduleSave();renderProposals()};
+    d.querySelector('[data-act=view]').onclick=()=>{const ri=S.index.runs.findIndex(x=>x.run===ob.run);gotoFrame(ri,S.index.runs[ri].indices.indexOf(ob.index)).then(()=>{const v=S.view.real;v.s=6;v.ox=320-(ob.xy[0]+0.5)*v.s;v.oy=240-(ob.xy[1]+0.5)*v.s;clampView('real');Object.assign(S.view.render,v);draw()})};
+    box.appendChild(d)}}
+// --- events ------------------------------------------------------------
+function canvasPoint(kind,e){const r=canvases[kind].getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
+for(const kind of ['real','render']){const c=canvases[kind];
+  c.addEventListener('contextmenu',e=>e.preventDefault());
+  c.addEventListener('wheel',e=>{e.preventDefault();const [x,y]=canvasPoint(kind,e);const f=Math.exp(-e.deltaY*0.0015);for(const k of ($('sync').checked?['real','render']:[kind])){const v=S.view[k];const ns=Math.min(16,Math.max(2,v.s*f));const g=ns/v.s;v.ox=x-(x-v.ox)*g;v.oy=y-(y-v.oy)*g;v.s=ns;clampView(k)}draw()},{passive:false});
+  c.addEventListener('mousedown',e=>{const [x,y]=canvasPoint(kind,e);if(e.button===2||e.button===1||e.shiftKey){S.pan={kind,x,y};return}if(e.button!==0)return;
+    const [u,v]=toImage(kind,x,y);const f=S.selected&&feature(S.selected);const cl=f&&clicksHere(f,kind)[0];
+    if(cl){const [cx,cy]=toCanvas(kind,...cl.xy);if(Math.hypot(cx-x,cy-y)<9){snapshot();S.drag={kind,fid:f.id};S.selMarker={fid:f.id,kind};draw();return}}
+    if(u<-0.5||v<-0.5||u>W-0.5||v>H-0.5)return;setClick(kind,u,v)});
+  c.addEventListener('mousemove',e=>{const [x,y]=canvasPoint(kind,e);const [u,v]=toImage(kind,x,y);S.hover={kind,u,v};
+    if(S.pan){const dx=x-S.pan.x,dy=y-S.pan.y;for(const k of ($('sync').checked?['real','render']:[kind])){S.view[k].ox+=dx;S.view[k].oy+=dy;clampView(k)}S.pan.x=x;S.pan.y=y}
+    else if(S.drag){const f=feature(S.drag.fid);const cl=clicksHere(f,S.drag.kind).find(c=>c.method!=='auto_render_match');if(cl){cl.xy=[Math.round(u*10)/10,Math.round(v*10)/10]}}
+    $(kind+'Coords').textContent=`u = ${u.toFixed(1)}, v = ${v.toFixed(1)}`;draw()});
+  c.addEventListener('mouseup',e=>{if(S.drag){const d=S.drag;S.drag=null;scheduleSave();renderDetail();}S.pan=null});
+  c.addEventListener('mouseleave',()=>{S.pan=null;if(S.drag){S.drag=null;scheduleSave()}S.hover=null;draw()})}
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if((e.ctrlKey||e.metaKey)&&(e.key==='z'||e.key==='Z')){e.preventDefault();if(e.shiftKey)redo();else undo();return}if((e.ctrlKey||e.metaKey)&&(e.key==='y'||e.key==='Y')){e.preventDefault();redo();return}const step=e.shiftKey?1:0.25;
+  switch(e.key){case ',':gotoFrame(S.runIdx,S.pos-1);break;case '.':gotoFrame(S.runIdx,S.pos+1);break;case '<':gotoFrame(S.runIdx,S.pos-10);break;case '>':gotoFrame(S.runIdx,S.pos+10);break;
+    case 'ArrowLeft':nudge(-step,0);e.preventDefault();break;case 'ArrowRight':nudge(step,0);e.preventDefault();break;case 'ArrowUp':nudge(0,-step);e.preventDefault();break;case 'ArrowDown':nudge(0,step);e.preventDefault();break;
+    case 'Delete':case 'Backspace':removeSelectedMarker();break;case 'Escape':S.selMarker=null;draw();break;case 'n':$('newName').focus();break;
+    default:if(/^[1-9]$/.test(e.key)){const vis=S.ann.features.filter(f=>f.status!=='rejected');const f=vis[Number(e.key)-1];if(f){S.selected=f.id;S.selMarker=null;renderList();renderDetail();draw()}}}});
+$('run').onchange=e=>gotoFrame(Number(e.target.value),0);
+$('slider').oninput=e=>gotoFrame(S.runIdx,Number(e.target.value));
+$('prev').onclick=()=>gotoFrame(S.runIdx,S.pos-1);$('next').onclick=()=>gotoFrame(S.runIdx,S.pos+1);
+$('prev10').onclick=()=>gotoFrame(S.runIdx,S.pos-10);$('next10').onclick=()=>gotoFrame(S.runIdx,S.pos+10);
+$('add').onclick=()=>addFeature($('newName').value);$('newName').onkeydown=e=>{if(e.key==='Enter')addFeature($('newName').value)};
+for(const id of ['sync','showPred','showOthers','blend'])$(id).onchange=draw;
+$('reset').onclick=()=>{for(const k of ['real','render'])S.view[k]={s:2,ox:0,oy:0};draw()};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.id===b.dataset.tab));if(b.dataset.tab==='proposals')loadProposals()});
+window.addEventListener('beforeunload',e=>{if(S.dirty){e.preventDefault();e.returnValue=''}});
+(async function init(){S.index=await api('/api/index');S.ann=await api('/api/annotations');$('annPath').textContent=S.index.annotations_path;
+  $('gpu').textContent='depth lifting: '+S.index.gpu_depth;if(S.index.real_label)$('realTitle').textContent=S.index.real_label;if(S.index.render_label)$('renderTitle').textContent=S.index.render_label;S.index.runs.forEach((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${r.short} (${r.indices.length} frames)`;$('run').appendChild(o)});
+  const first=S.index.runs.findIndex(r=>r.short==='183828');await gotoFrame(first>=0?first:0,0);renderList();renderDetail();markSaved();updateChip();
+  setInterval(async()=>{if(S.index.gpu_depth==='loading'){const j=await api('/api/index');S.index.gpu_depth=j.gpu_depth;$('gpu').textContent='depth lifting: '+j.gpu_depth}},3000)})();
+</script>
+</body>
+</html>

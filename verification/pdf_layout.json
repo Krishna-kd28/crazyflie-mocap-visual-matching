@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "pages": 5,
+  "visual_review": "All five rendered pages inspected after final edits",
+  "overfull_boxes": 0,
+  "contains": "Process explanation, equations, recorded example images",
+  "pdf_sha256": "94dbbe3e08c09de0195a839ee6caef2b2dc086e13246fcd930723e6bd33d72f9"
+}

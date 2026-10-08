@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Auto-feature viewer</title>
+<style>
+:root{--bg:#f4f3f0;--ink:#26231f;--muted:#6b6459;--line:#dcd7ce;--accent:#2f6fdb;--ok:#1d7a3a;--bad:#b3261e;--panel:#fff}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{display:flex;align-items:center;gap:16px;padding:10px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:17px;margin:0;font-weight:650}.status{color:var(--muted);font-size:12.5px}
+#toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:8px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+#toolbar label{color:var(--muted);font-size:12.5px;display:inline-flex;align-items:center;gap:5px;cursor:pointer}#toolbar input[type=range]{width:300px}
+#toolbar label.strong{color:var(--ink);font-weight:600}
+button{font:inherit;padding:4px 11px;border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer;color:var(--ink)}
+button:hover{background:#f3f1ec}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}button.primary:hover{background:#265dbb}
+button.danger{color:var(--bad)}button.small{padding:2px 9px;font-size:12.5px}
+main{display:grid;grid-template-columns:1fr 400px;height:calc(100vh - 104px)}
+.stage{padding:12px 18px;overflow:auto}
+.panels{display:grid;grid-template-columns:640px 8px 640px;width:1288px;font-size:12.5px;color:var(--muted);margin-bottom:5px}
+.panels b{color:var(--ink);font-weight:600}
+canvas#view{display:block;width:1288px;height:480px;border-radius:6px;background:#1e1e1e;cursor:crosshair}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;color:var(--muted);font-size:12.5px;margin-top:9px}
+.legend .dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#ff5b40;box-shadow:0 0 0 1.5px #1b1b1b,0 0 0 3px #fff;vertical-align:-2px;margin:0 6px 0 3px}
+.legend .dia{display:inline-block;width:10px;height:10px;background:#ff5b40;box-shadow:0 0 0 1.5px #1b1b1b,0 0 0 3px #fff;transform:rotate(45deg);vertical-align:-1px;margin:0 8px 0 4px}
+.legend .num{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:#1b1b1b;color:#fff;font:600 11px/17px system-ui,sans-serif;text-align:center;margin-right:7px;border:1px solid #fff}
+.legend .num.soft{background:#6a6a6a}
+.legend .ring{display:inline-block;width:12px;height:12px;border-radius:50%;border:2.5px solid #ff5b40;box-shadow:0 0 0 1px #fff,inset 0 0 0 1px #fff;vertical-align:-2px;margin:0 7px 0 3px}
+.legend .grey{display:inline-block;width:7px;height:7px;border-radius:50%;background:#c8c8c8;margin:0 7px 0 5px}
+.hint{color:var(--muted);font-size:12.5px;margin-top:6px}
+aside{border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0}
+.tabs{display:flex;border-bottom:1px solid var(--line)}.tabs button{flex:1;border:0;border-radius:0;background:#f1efe9;padding:9px}.tabs button.active{background:#fff;font-weight:600}
+.tab{display:none;padding:10px 12px;overflow:auto;flex:1}.tab.active{display:block}
+.cand{display:grid;grid-template-columns:38px 1fr auto;column-gap:8px;row-gap:1px;align-items:center;padding:6px 8px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.cand:hover{background:#f6f4ef}.cand.selected{border-color:var(--accent);background:#eef3fd}
+.num{display:inline-block;min-width:30px;padding:0 6px;border-radius:10px;color:#111;font:600 12px/20px system-ui,sans-serif;text-align:center}
+.cand .name{font-weight:600;font-size:13px}.cand .stats{color:var(--muted);font-size:12px;grid-column:2/4}
+.pill{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;background:#eee;color:#444}.pill.confirmed{background:#dcf5e3;color:#1a5c2c}.pill.rejected{background:#fde2e2;color:#7a1a1a}.pill.proposed{background:#fff1d6;color:#7a4a00}
+.detail{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:13px;max-width:1288px}
+.detail .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.detail .head .title{font-weight:650;font-size:15px}
+.crops{overflow-x:auto;margin-top:4px}.crops img{image-rendering:pixelated;border-radius:4px;display:block}
+kbd{font:12px ui-monospace,monospace;background:#eee;border:1px solid #ccc;border-radius:4px;padding:0 4px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#26231f;color:#fff;padding:9px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:10}.toast.show{opacity:.96}
+#tip{position:fixed;pointer-events:none;background:#26231f;color:#fff;padding:4px 9px;border-radius:6px;font-size:12px;display:none;z-index:9;white-space:nowrap}
+</style>
+</head>
+<body>
+<header><h1>Auto-feature viewer</h1><span class="status" id="status">loading…</span><span style="flex:1"></span><span class="status" id="info"></span></header>
+<div id="toolbar">
+  <button id="prev" title="previous frame (,)">‹</button>
+  <input type="range" id="slider" min="0" max="0" value="0">
+  <button id="next" title="next frame (.)">›</button>
+  <span id="frameinfo" class="hint" style="margin:0"></span>
+  <span style="flex:1"></span>
+  <label class="strong"><input type="checkbox" id="allFrames"> all frames (CoTracker3 propagations)</label>
+  <label><input type="checkbox" id="onlySel"> selected candidate only</label>
+  <label><input type="checkbox" id="showPred"> expected positions</label>
+  <label><input type="checkbox" id="showAll"> other matches</label>
+  <label><input type="checkbox" id="blend"> blend real into render</label>
+  <button id="reset" class="small">reset zoom</button>
+</div>
+<main>
+  <div class="stage">
+    <div class="panels"><div><b>Real camera</b> · frame as recorded</div><div></div><div><b>3DGS render</b> · at the global-fit pose, same lens geometry</div></div>
+    <canvas id="view" width="2576" height="960"></canvas>
+    <div class="legend">
+      <span><span class="dot"></span><span class="num">12</span>matched by the matcher in this frame: the same number and colour mark the same point in both panels</span>
+      <span><span class="dia"></span><span class="num soft">12</span>propagated by CoTracker3 from the nearest matched frame (left); where the point is expected in the render (right)</span>
+      <span><span class="ring"></span>where the global fit expects the selected candidate; the short tail is its error</span>
+      <span><span class="grey"></span>other matcher correspondence (off by default)</span>
+    </div>
+    <div class="hint">Click a point or a list entry to select it; hovering a point highlights its partner in the other panel. Wheel zooms, drag pans, <kbd>,</kbd> <kbd>.</kbd> step frames, <kbd>[</kbd> <kbd>]</kbd> step through the selected candidate's matched frames, <kbd>a</kbd> accept, <kbd>r</kbd> reject.</div>
+    <div class="detail" id="detail"><span class="hint">Select a candidate to see its crops in every matched frame.</span></div>
+  </div>
+  <aside>
+    <div class="tabs"><button class="active" data-tab="cands">Candidates</button><button data-tab="help">Help</button></div>
+    <div class="tab active" id="cands">
+      <div style="display:flex;gap:6px;align-items:center;margin-bottom:8px">
+        <select id="filter"><option value="all">all</option><option value="proposed">proposed</option><option value="confirmed">confirmed</option><option value="rejected">rejected</option><option value="here">seen in this frame</option></select>
+        <span style="flex:1"></span>
+        <button class="small" id="acceptAll">accept all proposed</button><button class="small danger" id="rejectAll">reject all proposed</button>
+      </div>
+      <div id="list"></div>
+    </div>
+    <div class="tab" id="help">
+      <p><b>What you see.</b> Left: the real frame as recorded. Right: the 3DGS render at the same camera pose under the global fit, in the same lens geometry, so a fixed point should sit at nearly the same pixel in both. Candidates are physical points that the matcher found in both images in several key frames (every fifth accepted frame), that triangulate consistently from the renders, and whose real observations agree with the global registration. They were built from SuperPoint keypoints matched by LightGlue (MINIMA cross-modal weights for real vs render), chained through the key renders, with unchained matches attached where a candidate is expected.</p>
+      <p><b>Two kinds of point.</b> A round dot is a match made by the matcher in that frame, independently in the real image and the render. A diamond is a position propagated by CoTracker3 from the nearest matched frame (left panel); in the right panel the diamond sits where the candidate's 3-D point projects. Propagated points only appear with <i>all frames</i> switched on, which also makes the slider cover every accepted frame instead of the key frames. The number is the candidate's rank in the list and is the same in both panels.</p>
+      <p><b>What to check.</b> Use the crops under the view: real on top, render below, one column per matched frame, crosshair on the matched point. Accept if every column shows the same fixed physical point (wall marks, floor tape corners, fixtures, door and window edges). Reject if it sits on a gate, mat, chair, box, cable or anything that may have moved, or if the columns disagree. In all-frames mode, watch whether the diamond stays on the same physical point as the frames advance.</p>
+      <p><b>Decisions</b> are written immediately to research/fixed_features/auto_features.json. Accepted candidates, with their matched and propagated positions, join the manual features in the fits once the pipeline is rerun.</p>
+    </div>
+  </aside>
+</main>
+<div class="toast" id="toast"></div><div id="tip"></div>
+<script>
+'use strict';
+const PALETTE=['#ff4d3d','#ffb020','#2ec4f0','#4fd36a','#b48cff','#ff6fc8','#ffe234','#5b9dff','#ff8c42','#22d3b0','#e0b040','#a8e04a'];
+const W=320,H=240,GAP=4;
+const S={data:null,list:[],pos:0,frame:null,imgs:{},view:{s:2,ox:0,oy:0},sel:null,hover:null,drag:null,moved:0};
+const $=id=>document.getElementById(id);
+const canvas=$('view'),ctx=canvas.getContext('2d');
+const rank=id=>S.data.candidates.findIndex(c=>c.id===id);
+const color=id=>PALETTE[Math.max(0,rank(id))%PALETTE.length];
+const num=id=>String(rank(id)+1);
+function toast(m,ms){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms||2200)}
+async function api(p,body){const r=await fetch(p,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:undefined);const j=await r.json();if(!r.ok)throw new Error(j.error||r.statusText);return j}
+function load(src){return new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>res(null);im.src=src})}
+const matchedHere=()=>S.frame?S.frame.matches.filter(m=>m.candidate):[];
+// propagated positions of candidates not matched in this frame: [{candidate, real, render, gap, err, seed}]
+function propagatedHere(){if(!S.frame||!$('allFrames').checked)return [];const seen=new Set(matchedHere().map(m=>m.candidate));const out=[];
+  for(const [c,p] of Object.entries(S.frame.propagated||{})){if(seen.has(c))continue;const exp=S.frame.predictions[c];out.push({candidate:c,real:p.xy,render:exp||p.xy,gap:p.gap,err:p.err,seed:p.seed,prop:true})}return out}
+function setList(){const all=$('allFrames').checked;const cur=S.list[S.pos];S.list=all?S.data.frames:S.data.key_frames;$('slider').max=S.list.length-1;
+  let pos=S.list.indexOf(cur);if(pos<0){pos=0;for(let k=0;k<S.list.length;k++)if(S.list[k]<=cur)pos=k}return pos}
+async function goto(pos){S.pos=Math.max(0,Math.min(S.list.length-1,pos));const i=S.list[S.pos];$('slider').value=S.pos;
+  const [a,b,f]=await Promise.all([load(`/img/real/${String(i).padStart(6,'0')}.png`),load(`/img/render/${String(i).padStart(6,'0')}.png`),api(`/api/frame?index=${i}`)]);
+  S.imgs={real:a,render:b};S.frame=f;S.hover=null;
+  const nm=matchedHere().length,np=propagatedHere().length;
+  $('frameinfo').textContent=`frame ${i} · ${S.pos+1}/${S.list.length} · t = ${f.time_s.toFixed(2)} s · ${f.key?'key frame':'in-between frame'} · ${nm} matched${$('allFrames').checked?`, ${np} propagated`:''} · ${f.matches.length} matches`;
+  draw();if($('filter').value==='here')renderList()}
+function toCanvas(u,v,panel){const w=S.view;return [w.ox+(u+0.5+(panel?W+GAP:0))*w.s,w.oy+(v+0.5)*w.s]}
+function rrect(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function dot(x,y,col,r){ctx.beginPath();ctx.arc(x,y,r+2.6,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.beginPath();ctx.arc(x,y,r+1.2,0,Math.PI*2);ctx.fillStyle='#1b1b1b';ctx.fill();ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=col;ctx.fill()}
+function diamond(x,y,col,r){ctx.save();ctx.translate(x,y);ctx.rotate(Math.PI/4);for(const [c,q] of [['#fff',r+2.6],['#1b1b1b',r+1.2],[col,r]]){ctx.fillStyle=c;ctx.fillRect(-q,-q,2*q,2*q)}ctx.restore()}
+function badge(x,y,label,col,style){ // 'plain' dark, 'strong' coloured (selected/hovered), 'soft' grey (propagated), 'ghost' white outline (expected only)
+  ctx.font='600 11px system-ui,sans-serif';ctx.textBaseline='middle';const w=ctx.measureText(label).width+9,h=16;
+  let bx=x+9,by=y-h-4;if(by<2)by=y+6;if(bx+w>1286)bx=x-9-w;
+  rrect(bx,by,w,h,8);ctx.fillStyle=style==='strong'?col:style==='ghost'?'rgba(255,255,255,.92)':style==='soft'?'rgba(95,95,95,.9)':'rgba(22,22,22,.88)';ctx.fill();
+  ctx.lineWidth=style==='ghost'?1.5:1;ctx.strokeStyle=style==='strong'?'#1b1b1b':style==='ghost'?col:'#fff';ctx.stroke();
+  ctx.fillStyle=(style==='plain'||style==='soft')?'#fff':'#111';ctx.fillText(label,bx+4.5,by+h/2+0.5)}
+function ring(x,y,col){ctx.lineWidth=4;ctx.strokeStyle='#fff';ctx.beginPath();ctx.arc(x,y,6.5,0,Math.PI*2);ctx.stroke();ctx.lineWidth=2.2;ctx.strokeStyle=col;ctx.beginPath();ctx.arc(x,y,6.5,0,Math.PI*2);ctx.stroke()}
+function line(x1,y1,x2,y2,col,width,alpha){ctx.save();ctx.globalAlpha=alpha;ctx.lineWidth=width+2;ctx.strokeStyle='#fff';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.lineWidth=width;ctx.strokeStyle=col;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.restore()}
+function draw(){ctx.setTransform(2,0,0,2,0,0);ctx.clearRect(0,0,1288,480);ctx.imageSmoothingEnabled=S.view.s<3;const w=S.view;
+  if(S.imgs.real)ctx.drawImage(S.imgs.real,w.ox,w.oy,W*w.s,H*w.s);
+  if(S.imgs.render){ctx.drawImage(S.imgs.render,w.ox+(W+GAP)*w.s,w.oy,W*w.s,H*w.s);if($('blend').checked&&S.imgs.real){ctx.globalAlpha=.5;ctx.drawImage(S.imgs.real,w.ox+(W+GAP)*w.s,w.oy,W*w.s,H*w.s);ctx.globalAlpha=1}}
+  if(!S.frame)return;const only=$('onlySel').checked&&S.sel;
+  // 1. other correspondences, small and quiet
+  if($('showAll').checked&&!only)for(const m of S.frame.matches){if(m.candidate)continue;for(const [p,panel] of [[m.real,0],[m.render,1]]){const [x,y]=toCanvas(...p,panel);ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.75)';ctx.fill();ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fillStyle='#555';ctx.fill()}}
+  // 2. expected positions of candidates neither matched nor propagated here
+  const shown=[...matchedHere(),...propagatedHere()];const shownIds=new Set(shown.map(m=>m.candidate));
+  if($('showPred').checked)for(const [c,xy] of Object.entries(S.frame.predictions)){if(shownIds.has(c)||(only&&c!==S.sel))continue;const col=color(c);for(const panel of [0,1]){const [x,y]=toCanvas(...xy,panel);ring(x,y,col);badge(x,y,num(c),col,'ghost')}}
+  // 3. candidates: plain first, then hovered, then selected on top
+  const vis=shown.filter(m=>!only||m.candidate===S.sel);
+  const order=[...vis.filter(m=>m.candidate!==S.sel&&m.candidate!==S.hover),...vis.filter(m=>m.candidate===S.hover&&m.candidate!==S.sel),...vis.filter(m=>m.candidate===S.sel)];
+  for(const m of order){const c=m.candidate,col=color(c),strong=c===S.sel,hot=c===S.hover;const [x1,y1]=toCanvas(...m.real,0),[x2,y2]=toCanvas(...m.render,1);
+    if(strong||hot){line(x1,y1,x2,y2,col,strong?2:1.4,strong?.9:.7);
+      const p=S.frame.predictions[c];if(p){const [px,py]=toCanvas(...p,0);line(x1,y1,px,py,col,2,.95);ring(px,py,col);if(!m.prop){const [qx,qy]=toCanvas(...p,1);line(x2,y2,qx,qy,col,2,.95);ring(qx,qy,col)}}}
+    const r=strong?6.5:hot?6:4.8,st=(strong||hot)?'strong':m.prop?'soft':'plain';
+    if(m.prop){diamond(x1,y1,col,r);diamond(x2,y2,col,r)}else{dot(x1,y1,col,r);dot(x2,y2,col,r)}
+    badge(x1,y1,num(c),col,st);badge(x2,y2,num(c),col,st)}}
+function nearest(x,y){let best=null,bd=13;if(!S.frame)return null;for(const m of [...matchedHere(),...propagatedHere()]){for(const [p,panel] of [[m.real,0],[m.render,1]]){const [cx,cy]=toCanvas(...p,panel);const d=Math.hypot(cx-x,cy-y);if(d<bd){bd=d;best=m}}}return best}
+function renderList(){const box=$('list');box.innerHTML='';const f=$('filter').value;const here=new Set([...matchedHere(),...propagatedHere()].map(m=>m.candidate));
+  for(const c of S.data.candidates){if(f!=='all'&&f!=='here'&&c.status!==f)continue;if(f==='here'&&!here.has(c.id))continue;const d=document.createElement('div');d.className='cand'+(c.id===S.sel?' selected':'');
+    const ch=c.checks;const prop=c.prop_frames?c.prop_frames.length:0;d.innerHTML=`<span class="num" style="background:${color(c.id)}">${num(c.id)}</span><span class="name">${c.id}</span><span class="pill ${c.status}">${c.status}</span><span class="stats">${ch.n_obs} matched${prop?` + ${prop} propagated`:''} · ${ch.span_s.toFixed(0)} s span · parallax ${ch.parallax_deg.toFixed(0)}° · error ${ch.real_reproj_median_px.toFixed(1)} px${ch.on_floor?' · floor':''}</span>`;
+    d.onclick=()=>select(c.id,true);box.appendChild(d)}
+  const sel=box.querySelector('.cand.selected');if(sel)sel.scrollIntoView({block:'nearest'})}
+function candFrames(id){const c=S.data.candidates.find(x=>x.id===id);return c?c.frames:[]}
+async function stepCandidate(dir){if(!S.sel)return;const fr=candFrames(S.sel);const cur=S.list[S.pos];let k=-1;
+  if(dir>0)k=fr.findIndex(f=>f>cur);else for(let j=fr.length-1;j>=0;j--)if(fr[j]<cur){k=j;break}
+  if(k<0){toast(dir>0?'last matched frame of this candidate':'first matched frame of this candidate');return}
+  let pos=S.list.indexOf(fr[k]);if(pos<0){$('allFrames').checked=true;pos=setList();pos=S.list.indexOf(fr[k])}await goto(pos)}
+async function select(id,jump){S.sel=id;renderList();const c=S.data.candidates.find(x=>x.id===id);if(!c)return;
+  if(jump&&![...matchedHere(),...propagatedHere()].some(m=>m.candidate===id)){const target=c.frames[Math.floor(c.frames.length/2)];let pos=S.list.indexOf(target);if(pos<0){$('allFrames').checked=true;setList();pos=S.list.indexOf(target)}await goto(pos)}
+  draw();const ch=c.checks;const col=color(id);const box=$('detail');const ps=c.prop_stats||{};
+  box.innerHTML=`<div class="head"><span class="num" style="background:${col}">${num(id)}</span><span class="title">${id}</span><span class="pill ${c.status}" id="dpill">${c.status}</span>
+      <span style="flex:1"></span><button class="small" id="cprev" title="[">‹ previous matched frame</button><button class="small" id="cnext" title="]">next matched frame ›</button>
+      <button class="small primary" id="acc">accept (a)</button><button class="small danger" id="rej">reject (r)</button><button class="small" id="und">back to proposed</button></div>
+    <div class="hint">${c.description}. 3-D point (${c.X.join(', ')}) m · render residual ${ch.render_residual_px.toFixed(2)} px · real-vs-render point gap ${ch.real_vs_render_point_m==null?'n/a':ch.real_vs_render_point_m.toFixed(2)+' m'}${ps.propagated!=null?` · CoTracker3: ${ps.propagated} propagated frames of ${ps.in_view} in view${ps.anchor_err_median_px!=null?`, reaches the next matched frame within ${ps.anchor_err_median_px.toFixed(1)} px`:''}`:''}</div>
+    <div class="hint">Crops centred on the matched point, one column per matched frame: real on top, render below.</div><div class="crops"><img id="crops" src="/api/crops?id=${id}&t=${Date.now()%1000}"></div>`;
+  $('acc').onclick=()=>setStatus([id],'confirmed');$('rej').onclick=()=>setStatus([id],'rejected');$('und').onclick=()=>setStatus([id],'proposed');$('cprev').onclick=()=>stepCandidate(-1);$('cnext').onclick=()=>stepCandidate(1)}
+async function setStatus(ids,status){try{await api('/api/status',{ids,status});for(const c of S.data.candidates)if(ids.includes(c.id))c.status=status;renderList();const p=$('dpill');if(p&&ids.includes(S.sel)){p.textContent=status;p.className='pill '+status}toast(`${ids.length} candidate${ids.length>1?'s':''} → ${status}`);$('status').textContent='saved '+new Date().toLocaleTimeString()}catch(e){toast('save failed: '+e.message)}}
+function canvasPoint(e){const r=canvas.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
+canvas.addEventListener('wheel',e=>{e.preventDefault();$('tip').style.display='none';S.hover=null;const [x,y]=canvasPoint(e);const v=S.view;const ns=Math.min(12,Math.max(1,v.s*Math.exp(-e.deltaY*0.0015)));const g=ns/v.s;v.ox=x-(x-v.ox)*g;v.oy=y-(y-v.oy)*g;v.s=ns;draw()},{passive:false});
+canvas.addEventListener('mousedown',e=>{const [x,y]=canvasPoint(e);S.drag={x,y};S.moved=0});
+canvas.addEventListener('mousemove',e=>{const [x,y]=canvasPoint(e);
+  if(S.drag){S.view.ox+=x-S.drag.x;S.view.oy+=y-S.drag.y;S.moved+=Math.abs(x-S.drag.x)+Math.abs(y-S.drag.y);S.drag={x,y};draw();return}
+  const m=nearest(x,y);const id=m?m.candidate:null;const tip=$('tip');
+  if(id){const c=S.data.candidates.find(z=>z.id===id);const p=S.frame.predictions[id];const err=p?Math.hypot(p[0]-m.real[0],p[1]-m.real[1]).toFixed(1)+' px from expected':'';
+    tip.textContent=m.prop?`#${num(id)} ${id} · propagated ${m.gap} frame${m.gap===1?'':'s'} from frame ${m.seed} · forward/backward ${m.err.toFixed(1)} px · ${err}`:`#${num(id)} ${id} · matched · ${c.checks.n_obs} matched frames · ${err}`;
+    tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+12)+'px';canvas.style.cursor='pointer'}
+  else{tip.style.display='none';canvas.style.cursor='crosshair'}
+  if(id!==S.hover){S.hover=id;draw()}});
+canvas.addEventListener('mouseup',()=>S.drag=null);canvas.addEventListener('mouseleave',()=>{S.drag=null;$('tip').style.display='none';if(S.hover){S.hover=null;draw()}});
+canvas.addEventListener('click',e=>{if(!S.frame||S.moved>4)return;const [x,y]=canvasPoint(e);const m=nearest(x,y);if(m)select(m.candidate,false)});
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;if(e.key===',')goto(S.pos-1);else if(e.key==='.')goto(S.pos+1);else if(e.key==='[')stepCandidate(-1);else if(e.key===']')stepCandidate(1);else if(e.key==='a'&&S.sel)setStatus([S.sel],'confirmed');else if(e.key==='r'&&S.sel)setStatus([S.sel],'rejected')});
+$('prev').onclick=()=>goto(S.pos-1);$('next').onclick=()=>goto(S.pos+1);$('slider').oninput=e=>goto(Number(e.target.value));
+$('allFrames').onchange=async()=>{const pos=setList();await goto(pos)};
+for(const id of ['showAll','showPred','onlySel','blend'])$(id).onchange=draw;$('reset').onclick=()=>{S.view={s:2,ox:0,oy:0};draw()};$('filter').onchange=renderList;
+$('acceptAll').onclick=()=>{const ids=S.data.candidates.filter(c=>c.status==='proposed').map(c=>c.id);if(ids.length&&confirm(`Accept all ${ids.length} proposed candidates?`))setStatus(ids,'confirmed')};
+$('rejectAll').onclick=()=>{const ids=S.data.candidates.filter(c=>c.status==='proposed').map(c=>c.id);if(ids.length&&confirm(`Reject all ${ids.length} proposed candidates?`))setStatus(ids,'rejected')};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.id===b.dataset.tab))});
+(async function init(){S.data=await api('/api/candidates');if(!S.data.key_frames||!S.data.key_frames.length)S.data.key_frames=S.data.frames;
+  if(!S.data.propagated){$('allFrames').disabled=true;$('allFrames').parentElement.title='run scripts/auto_features.py track first'}
+  $('info').textContent=`${S.data.run} · ${S.data.matcher} · ${S.data.counts.kept} candidates of ${S.data.counts.tracks} tracks · key frames every ${S.data.stride||'?'} accepted frames`;$('status').textContent='ready';
+  S.list=S.data.key_frames;$('slider').max=S.list.length-1;renderList();
+  // start on the key frame where most candidates are matched
+  const count={};for(const c of S.data.candidates)for(const f of c.frames)count[f]=(count[f]||0)+1;
+  let best=S.list[0],bc=-1;for(const [f,n] of Object.entries(count))if(n>bc){bc=n;best=Number(f)}
+  await goto(Math.max(0,S.list.indexOf(best)))})();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+-r requirements.txt
+# Install torch/torchvision first using requirements-torch-cu128.txt.
+# A working NVIDIA driver and CUDA build toolchain are needed for rendering.
+gsplat==1.5.3
+ninja>=1.11,<2
+kornia==0.8.3
+lightglue @ git+https://github.com/cvg/LightGlue.git@eb42fee2d71449efb0aa5c10549752b5d75384d8
+cotracker @ git+https://github.com/facebookresearch/co-tracker.git@82e02e8029753ad4ef13cf06be7f4fc5facdda4d

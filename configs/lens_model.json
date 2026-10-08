@@ -1,0 +1,31 @@
+{
+  "type": "angle",
+  "pinhole_K": [
+    [
+      181.153324,
+      0.0,
+      166.454976
+    ],
+    [
+      0.0,
+      182.146828,
+      75.996424
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "k": [
+    0.2650426865128073,
+    -0.02069775259342863
+  ],
+  "fx": 181.153324,
+  "fy": 182.146828,
+  "cx": 166.454976,
+  "cy": 75.996424,
+  "source": "original-research/camera_research_stuff/output/fixed_features/lens_calibration/summary.json",
+  "model": "r_d = theta (1 + k1 theta^2 + k2 theta^4 ...), theta = atan(r); raw pixel = (fx x r_d/r + cx, fy y r_d/r + cy)",
+  "note": "Calibrated against 3DGS renders at per-frame fitted poses; pinhole side uses the supplied K."
+}

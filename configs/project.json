@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "workspace_dir": "workspace",
+  "data_dir": "data/recordings",
+  "scene_dir": "assets/scene",
+  "checkpoint": "assets/scene/nerfstudio_models/step-000129999.ckpt",
+  "camera": "configs/camera.json",
+  "lens": "configs/lens_model.json",
+  "seed_registration": "configs/seed_registration.json",
+  "reference_atlas": "configs/reference_atlas.npz",
+  "minima_weights": "weights/minima_lightglue.pth",
+  "cotracker_weights": "weights/scaled_offline.pth",
+  "cross_matcher": "minima",
+  "baseline_appearance": "configs/appearance_baseline.json",
+  "appearance_model": "configs/appearance_selection.json",
+  "runs": [
+    "run_20260925T122400",
+    "run_20260925T123004",
+    "run_20260925T123534",
+    "run_20260925T125125"
+  ],
+  "exposure": {
+    "run_20260925T122400": {
+      "exposure_ms": 8.33,
+      "digital_gain": 1.5
+    },
+    "run_20260925T123004": {
+      "exposure_ms": 8.33,
+      "digital_gain": 0.75
+    },
+    "run_20260925T123534": {
+      "exposure_ms": 5.55,
+      "digital_gain": 1.5
+    },
+    "run_20260925T125125": {
+      "exposure_ms": 11.09,
+      "digital_gain": 1.5
+    }
+  },
+  "nominal_meters_per_scene_unit": 0.85,
+  "exclude_floor": true,
+  "exclude_central_radius_m": 1.0,
+  "floor_plane_abc": [
+    -0.028486893124545488,
+    0.09940448341831376,
+    0.8608268555975332
+  ]
+}

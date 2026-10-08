@@ -1,0 +1,28 @@
+[
+  {
+    "filename": "minima_lightglue.pth",
+    "url": "https://github.com/LSXI7/storage/releases/download/MINIMA/minima_lightglue.pth",
+    "sha256": "bd981be2f5e8cdab120bb0380d132bf7d2ec20cd61499f92f283660bf2f5b126",
+    "bytes": 47484144,
+    "config_key": "minima_weights"
+  },
+  {
+    "filename": "scaled_offline.pth",
+    "url": "https://huggingface.co/facebook/cotracker3/resolve/main/scaled_offline.pth",
+    "sha256": "2670d4562ed69326dda775a26e54883925cd11b6fc9b24cb7aa9f8078bce7834",
+    "bytes": 101890938,
+    "config_key": "cotracker_weights"
+  },
+  {
+    "filename": "superpoint_v1.pth",
+    "url": "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/superpoint_v1.pth",
+    "sha256": "52b6708629640ca883673b5d5c097c4ddad37d8048b33f09c8ca0d69db12c40e",
+    "bytes": 5206086
+  },
+  {
+    "filename": "superpoint_lightglue_v0-1_arxiv.pth",
+    "url": "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/superpoint_lightglue.pth",
+    "sha256": "6ff7040d0a497fc6639337946d7538dae07428c18f77a067a0b5a960e7cc551a",
+    "bytes": 47500279
+  }
+]
